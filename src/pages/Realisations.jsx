@@ -100,7 +100,7 @@ export default function Realisations() {
               type="button"
               onClick={() => setFiltre(id)}
               aria-pressed={on}
-              className={`rounded-full border px-4 py-2 text-[0.88rem] font-medium transition-colors ${
+              className={`rounded-md border px-4 py-2 text-[0.88rem] font-medium transition-colors ${
                 on
                   ? 'border-transparent bg-brand text-white'
                   : 'border-line bg-surface text-fg-2 hover:border-line-2 hover:text-fg'

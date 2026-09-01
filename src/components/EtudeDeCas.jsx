@@ -40,7 +40,7 @@ export function Encadre({ titre, accent, children }) {
   return (
     <Enter>
       <div
-        className="mt-8 rounded-2xl border p-7"
+        className="mt-8 rounded-lg border p-7"
         style={{ borderColor: teinte, background: `color-mix(in srgb, ${teinte} 8%, transparent)` }}
       >
         <p className="code font-semibold" style={{ color: teinte }}>{titre}</p>
@@ -181,7 +181,7 @@ export function Figure({ n, src, alt, legende, attendu, ratio = '16 / 10' }) {
         <img
           src={src}
           alt={alt || legende}
-          className="w-full rounded-2xl border border-line"
+          className="w-full rounded-lg border border-line"
           loading="lazy"
         />
       ) : (
@@ -189,7 +189,7 @@ export function Figure({ n, src, alt, legende, attendu, ratio = '16 / 10' }) {
           role="img"
           aria-label={`Illustration à fournir — ${attendu}`}
           style={{ aspectRatio: ratio }}
-          className="flex w-full flex-col items-center justify-center gap-3 rounded-2xl border border-dashed border-line-2 bg-surface/60 p-8 text-center"
+          className="flex w-full flex-col items-center justify-center gap-3 rounded-lg border border-dashed border-line-2 bg-surface/60 p-8 text-center"
         >
           <span className="chip">Illustration à intégrer</span>
           <p className="max-w-[46ch] text-[0.9rem] leading-relaxed text-fg-3">{attendu}</p>

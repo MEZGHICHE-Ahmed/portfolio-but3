@@ -49,7 +49,7 @@ export default function CompetenceDetail() {
             <p className="measure mt-7 text-[1.05rem] leading-[1.7] text-fg-2">{c.definition}</p>
 
             <div
-              className="mt-8 rounded-2xl border p-6"
+              className="mt-8 rounded-lg border p-6"
               style={{ borderColor: accent, background: `color-mix(in srgb, ${accent} 8%, transparent)` }}
             >
               <p className="code font-semibold" style={{ color: accent }}>
@@ -96,7 +96,7 @@ export default function CompetenceDetail() {
           {c.cadrage && (
             <Enter as="section" id="cadrage" className="mt-20 scroll-mt-28">
               <div
-                className="rounded-2xl border p-7"
+                className="rounded-lg border p-7"
                 style={{ borderColor: accent, background: `color-mix(in srgb, ${accent} 8%, transparent)` }}
               >
                 <p className="code font-semibold" style={{ color: accent }}>

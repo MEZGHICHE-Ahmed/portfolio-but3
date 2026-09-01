@@ -7,6 +7,11 @@ export default [
   { ignores: ['dist'] },
   js.configs.recommended,
   {
+    // Fichiers de configuration exécutés par Node, pas par le navigateur.
+    files: ['vite.config.js', 'eslint.config.js'],
+    languageOptions: { globals: globals.node },
+  },
+  {
     files: ['**/*.{js,jsx}'],
     languageOptions: {
       ecmaVersion: 2021,

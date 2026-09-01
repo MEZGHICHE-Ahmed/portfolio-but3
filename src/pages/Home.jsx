@@ -57,8 +57,8 @@ export default function Home() {
             <div className="card p-7">
               <div className="flex items-center gap-4">
                 <span
-                  className="grid size-16 shrink-0 place-items-center rounded-2xl text-[1.3rem] font-extrabold text-white"
-                  style={{ background: 'linear-gradient(135deg, var(--color-brand), var(--color-brand-2))' }}
+                  className="grid size-16 shrink-0 place-items-center rounded-md text-[1.3rem] font-extrabold"
+                  style={{ background: 'var(--color-fg)', color: 'var(--color-bg)' }}
                 >
                   {profil.initiales}
                 </span>
@@ -250,10 +250,7 @@ export default function Home() {
         <Enter>
           <div
             className="card overflow-hidden p-10 text-center sm:p-14"
-            style={{
-              background:
-                'linear-gradient(135deg, rgba(91,140,255,0.14), rgba(139,108,255,0.10))',
-            }}
+            style={{ background: 'var(--color-surface-2)' }}
           >
             <h2 className="text-[clamp(1.8rem,4vw,2.6rem)] font-extrabold">
               Travaillons ensemble
