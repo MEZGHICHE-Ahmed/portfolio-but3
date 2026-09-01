@@ -86,13 +86,13 @@ export const competences = [
         preuves: [{ label: "Rapport d'activité 2024-2025", url: null }],
       },
       {
-        titre: "Site Hydrométrie — la première application web complète",
-        contexte: "SAÉ de 1ʳᵉ année — IUT de Créteil-Vitry",
-        type: "Projet universitaire",
-        stack: ["Flask", "MVC", "SQLite", "SVG"],
+        titre: "Plateforme souveraine — intégrer et exploiter une infrastructure complète",
+        contexte: "Alternance Cloud Inspire — hébergement pour une agence nationale de cybersécurité",
+        type: "Expérience professionnelle",
+        stack: ["Docker Compose", "Caddy + WAF", "CrowdSec", "GitLab CI", "Harbor", "Grafana + Loki", "Restic"],
         analyse:
-          "Le point de départ, que je garde ici volontairement pour donner la mesure du chemin. Une application web mono-support, un découpage MVC appliqué parce qu'on me l'avait enseigné, une base SQLite, des cartes en SVG. Je savais faire fonctionner une application sur mon poste. Ce que je ne savais pas encore, et qui fait toute la différence avec Mika, c'est qu'une application n'a de valeur qu'une fois déployée, accessible et surveillée.",
-        preuves: [{ label: "Travaux de formation", url: null }],
+          "La mission qui illustre le mieux l'apprentissage critique « intégrer des solutions dans un environnement de production » : migrer le site institutionnel et la messagerie d'une agence gouvernementale de cybersécurité depuis un hébergement mutualisé vers une plateforme que nous construisons et exploitons de bout en bout. Sept machines virtuelles, un rôle chacune, et une règle d'architecture posée dès le départ : chaque machine embarque son propre pare-feu applicatif et son agent de supervision, de sorte qu'un service se déploie et se retire indépendamment des autres. La migration a été volontairement progressive — le site d'abord, la messagerie ensuite — chaque phase avec ses indicateurs et son retour arrière documenté. Le détail qui m'a le plus appris : le pare-feu applicatif en mode blocage cassait la forge logicielle, dont les requêtes légitimes ressemblent à des attaques pour des règles génériques. Passer cette machine en détection seule, tout en gardant le blocage sur les services exposés au public, est un arbitrage qu'on ne rencontre qu'en exploitation réelle.",
+        preuves: [{ label: "Documentation d'architecture (confidentielle)", url: null }],
       },
     ],
     bilan:
@@ -186,17 +186,17 @@ export const competences = [
         preuves: [{ label: "Étude de cas complète", url: "/realisations/coppelis" }],
       },
       {
-        titre: "Analyse de complexité en temps et en mémoire",
-        contexte: "SAÉ de 1ʳᵉ année et ressource Qualité algorithmique de 3ᵉ année",
-        type: "Projet universitaire",
-        stack: ["C", "Python", "Tris & recherches", "Mesures comparées"],
+        titre: "Audiodescription — réduire le coût d'un pipeline de modèles lourds",
+        contexte: "Alternance Cloud Inspire — transcription et audiodescription pour l'audiovisuel",
+        type: "Expérience professionnelle",
+        stack: ["Celery", "Whisper", "Modèles de vision", "Détection de scènes", "Parallélisme"],
         analyse:
-          "Là où j'ai appris à mesurer. En première année, j'ai implémenté plusieurs tris en Python et en C, mesuré leurs temps sur des jeux de tailles croissantes dans le meilleur, le pire et le cas moyen, puis tracé les courbes pour les confronter aux complexités théoriques. La ressource Qualité algorithmique de cette année a repris l'exercice avec la mémoire en plus. Ces travaux paraissent scolaires à côté des traces précédentes, et ils le sont — mais c'est là que s'est ancré le réflexe qui structure tout le reste : une intuition de performance ne vaut rien tant qu'elle n'a pas été confrontée à une mesure.",
-        preuves: [{ label: "Comptes rendus de TP", url: null }],
+          "Décrire une vidéo image par image avec un modèle de vision est inabordable : une heure de vidéo représente des dizaines de milliers d'images. Le levier n'est pas un modèle plus gros, c'est un découpage plus intelligent : une détection de scènes segmente d'abord la vidéo, trois images représentatives sont extraites par scène, et le modèle reçoit un lot groupé par appel plutôt qu'une image à la fois — le nombre d'appels dépend du contenu réel de la vidéo, pas de sa durée. La transcription de l'audio et l'analyse visuelle sont indépendantes, elles s'exécutent donc en parallèle ; la consolidation, qui a besoin des deux, ne démarre qu'à leur terme, orchestrée par la file de tâches. Les workers sont enfin séparés selon leur ressource critique — le GPU pour la transcription, des workers légers pour l'analyse et l'orchestration, un worker dédié à la synthèse vocale — chacun avec sa file, pour dimensionner indépendamment et éviter qu'un traitement lourd n'affame les autres.",
+        preuves: [{ label: "Documentation technique (confidentielle)", url: null }],
       },
     ],
     bilan:
-      "Je suis passé de la mesure d'algorithmes de tri sur des jeux de test à l'optimisation de systèmes qui tournent devant de vrais utilisateurs. Ce qui a changé n'est pas la technique mais la discipline : je formule le critère avant de choisir, je mesure au lieu de supposer, et j'accepte qu'une méthode élégante soit écartée par un essai qui la contredit.",
+      "Je suis passé de la mesure d'algorithmes sur des jeux de test, en formation, à l'optimisation de systèmes qui tournent devant de vrais utilisateurs. Ce qui a changé n'est pas la technique mais la discipline : je formule le critère avant de choisir, je mesure au lieu de supposer, et j'accepte qu'une méthode élégante soit écartée par un essai qui la contredit.",
     pistes: [
       "Évaluer finement le prototype à modèle audio unique de Coppelis, qui supprime deux étapes du pipeline.",
       "Systématiser le profilage avant optimisation plutôt que raisonner sur le code lu.",
@@ -262,6 +262,15 @@ export const competences = [
         analyse:
           "C'est ma trace la plus directe sur le volet collectif, et je l'assume comme telle : cette année chez Cloud Inspire je travaille seul, c'est en deuxième année que j'ai appris à m'insérer dans une équipe. J'y ai découvert ce que Git veut dire quand plusieurs personnes touchent au même code — branches, intégration, revues — et surtout qu'une contribution n'est pas terminée quand elle fonctionne, mais quand quelqu'un d'autre l'a comprise et acceptée. Ce que j'en retiens aujourd'hui structure ma manière de documenter : j'écris pour la personne qui reprendra le projet après moi, parce que j'ai été cette personne.",
         preuves: [{ label: "Rapport d'activité 2024-2025", url: null }],
+      },
+      {
+        titre: "Plateforme souveraine — conduire une migration pour un client institutionnel",
+        contexte: "Alternance Cloud Inspire — gouvernance et conduite du changement",
+        type: "Expérience professionnelle",
+        stack: ["Plan de travail", "Comité de pilotage", "KPIs", "Runbooks"],
+        analyse:
+          "Le client est une agence nationale de cybersécurité : chaque décision technique devait être présentée, justifiée et validée par un comité de pilotage. J'ai contribué au plan de travail qui cadre la mission — gouvernance, phasage, indicateurs, plan de bascule DNS, continuité et retour arrière — un document écrit pour des décideurs, pas pour des développeurs. La philosophie « pas de big-bang » n'est pas un choix technique mais un choix de conduite du changement : le site d'abord, la messagerie ensuite, parce qu'une boîte mail indisponible se voit immédiatement et détruit la confiance avant même que la plateforme ait pu faire ses preuves. Les runbooks d'exploitation jouent le même rôle que ma documentation de fond sur les autres projets : permettre à quelqu'un d'autre de faire fonctionner la plateforme sans moi.",
+        preuves: [{ label: "Plan de travail de la mission (confidentiel)", url: null }],
       },
       {
         titre: "Une veille technique organisée et réinvestie dans les produits",
@@ -378,7 +387,7 @@ export const competencesNiveau2 = [
     titre: "Administrer des systèmes informatiques communicants complexes",
     niveauTitre: "Déployer des services dans une architecture réseau",
     reinvesti:
-      "Conteneurisation et orchestration locale des services, déploiement automatisé par Ansible sur serveur distant, configuration réseau des services de Gateway IAM, intégration continue.",
+      "Construction et exploitation d'une plateforme d'hébergement souveraine — sept machines virtuelles, pare-feu applicatif par service, supervision centralisée des journaux et métriques, sauvegardes avec rétention —, conteneurisation, déploiement automatisé par Ansible, intégration continue.",
     ressources: [
       "Programmation système",
       "Réseaux",
