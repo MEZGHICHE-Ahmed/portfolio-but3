@@ -102,7 +102,7 @@ export default function Realisations() {
               aria-pressed={on}
               className={`rounded-md border px-4 py-2 text-[0.88rem] font-medium transition-colors ${
                 on
-                  ? 'border-transparent bg-brand text-white'
+                  ? 'border-transparent bg-brand text-bg'
                   : 'border-line bg-surface text-fg-2 hover:border-line-2 hover:text-fg'
               }`}
             >
