@@ -30,7 +30,8 @@ export const experiences = [
     points: [
       "Conception et mise en production de Mika, plateforme commerciale augmentée par l'IA (mobile, web, serveur)",
       "Réalisation d'un agent vocal téléphonique d'autorisation d'accès, éprouvé sur appels réels",
-      "Développement d'une passerelle de provisionnement d'identités vers cinq types de services cibles",
+      "Migration d'une agence nationale de cybersécurité vers une plateforme d'hébergement souveraine exploitée de bout en bout (web, messagerie, CI/CD, supervision, sauvegardes)",
+      "Plateforme de transcription et d'audiodescription automatique par IA pour une société de production audiovisuelle",
       "Prise en charge complète du cycle : analyse du besoin, architecture, développement, déploiement, suivi",
     ],
   },

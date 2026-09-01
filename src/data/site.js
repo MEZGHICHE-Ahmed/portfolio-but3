@@ -16,7 +16,7 @@ export const profil = {
   // Présentation longue (page Profil)
   bio: [
     "Je suis en dernière année de BUT Informatique (Bac+3) à l'IUT de Créteil-Vitry, dans le parcours « Réalisation d'applications : conception, développement, validation », que je suis en apprentissage chez Cloud Inspire — une entreprise qui déploie des infrastructures cloud privées et des agents d'intelligence artificielle chez ses clients, en s'appuyant exclusivement sur des technologies open source.",
-    "Mon poste s'intitule assistant du directeur technique. Dans une grande entreprise, cela recouvrirait de la coordination ; dans une structure de cette taille, cela veut dire prendre en charge la réalisation effective des produits — l'analyse du besoin, l'architecture, le développement serveur et les interfaces, le déploiement, puis le suivi des incidents et des évolutions. Cette année, deux produits sont nés de ce périmètre : une plateforme commerciale augmentée par l'IA, aujourd'hui en production, et un agent vocal téléphonique éprouvé sur des appels réels.",
+    "Mon poste s'intitule assistant du directeur technique. Dans une grande entreprise, cela recouvrirait de la coordination ; dans une structure de cette taille, cela veut dire prendre en charge la réalisation effective des produits — l'analyse du besoin, l'architecture, le développement serveur et les interfaces, le déploiement, puis le suivi des incidents et des évolutions. Cette année, ce périmètre a couvert quatre missions : une plateforme commerciale augmentée par l'IA aujourd'hui en production, un agent vocal téléphonique éprouvé sur des appels réels, la migration d'une agence nationale de cybersécurité vers une plateforme d'hébergement souveraine que nous exploitons, et une plateforme de transcription et d'audiodescription automatique pour l'audiovisuel.",
     "Ce que cette autonomie m'a appris tient en deux convictions. La première : on n'accorde jamais à un modèle d'intelligence artificielle une confiance qu'il ne mérite pas — on expose son degré de certitude à l'utilisateur et on lui donne les moyens de corriger. La seconde : un programme qui affirme avoir anonymisé des données ne constitue pas une preuve ; seule une vérification indépendante, menée selon une autre logique, apporte cette garantie. Ce site est la démonstration, traces à l'appui, du niveau Confirmé sur les trois compétences terminales de mon parcours.",
   ],
   objectif:
@@ -39,7 +39,7 @@ export const competencesTechniques = [
   },
   {
     famille: "Back-end & API",
-    items: ["FastAPI", "Flask", "NestJS", "Spring Boot", "Prisma", "RabbitMQ"],
+    items: ["FastAPI", "Flask", "NestJS", "Spring Boot", "Prisma", "Celery", "RabbitMQ"],
   },
   {
     famille: "Front-end & mobile",
@@ -51,11 +51,11 @@ export const competencesTechniques = [
   },
   {
     famille: "Intelligence artificielle",
-    items: ["Ollama", "LiveKit", "STT / TTS", "Modèles de vision", "Sorties structurées"],
+    items: ["Ollama", "Whisper", "LiveKit", "STT / TTS", "Modèles de vision", "LangChain"],
   },
   {
-    famille: "Infrastructure & qualité",
-    items: ["Docker", "Ansible", "GitHub Actions", "pytest", "Ruff", "MidPoint"],
+    famille: "Infrastructure & exploitation",
+    items: ["Docker", "Ansible", "GitLab CI", "GitHub Actions", "Grafana + Loki", "Caddy / WAF", "Restic", "pytest"],
   },
 ];
 
@@ -64,6 +64,7 @@ export const atouts = [
   "Conception d'architectures distribuées et résilientes",
   "Intégration raisonnée de modèles d'IA, avec garde-fous explicites",
   "Sécurité applicative : cloisonnement, chiffrement, données personnelles",
+  "Exploitation d'infrastructures : supervision, sauvegardes, migration sans interruption de service",
   "Communication avec des interlocuteurs non informaticiens",
 ];
 
@@ -86,7 +87,7 @@ export const navLinks = [
 // Repères chiffrés affichés sur la page d'accueil
 export const chiffresCles = [
   { valeur: "2 ans", label: "d'alternance en entreprise" },
-  { valeur: "2", label: "produits mis en service" },
-  { valeur: "10+", label: "projets réalisés" },
+  { valeur: "5", label: "missions en entreprise" },
+  { valeur: "2", label: "produits en production" },
   { valeur: "Bac+3", label: "BUT Informatique · 2026" },
 ];

@@ -20,7 +20,7 @@ function Carte({ p }) {
     <Wrapper {...props}>
       <div className="flex flex-wrap items-center gap-2">
         <span className="chip">{p.categorie}</span>
-        {p.id === 'mika' && (
+        {p.enProduction && (
           <span className="chip" style={{ color: 'var(--color-c6)' }}>
             <span className="size-1.5 rounded-full bg-c6" /> En production
           </span>
@@ -84,7 +84,7 @@ export default function Realisations() {
         meta={[
           ['Projets', String(projets.length)],
           ['En entreprise', String(projets.filter((p) => p.type === 'pro').length)],
-          ['En production', '1'],
+          ['En production', String(projets.filter((p) => p.enProduction).length)],
           ['Études de cas', '2'],
         ]}
       />

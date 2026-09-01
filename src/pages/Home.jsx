@@ -96,42 +96,51 @@ export default function Home() {
       <section className="sheet py-20">
         <SectionTitle
           eyebrow="Projets"
-          title="Ce que j’ai construit cette année"
-          lead="Deux produits conçus, développés et mis en service seul, en alternance chez Cloud Inspire."
+          title="Ce que j’ai construit en entreprise"
+          lead="Quatre missions menées en alternance chez Cloud Inspire — des produits en production aux preuves de concept éprouvées sur le terrain."
         />
 
         <div className="mt-12 grid gap-6 lg:grid-cols-2">
-          {vedettes.map((p, i) => (
-            <Enter key={p.id} delay={i * 0.08}>
-              <Link to={p.etudeDeCas} className="card-link group flex h-full flex-col p-7">
-                <div className="flex flex-wrap items-center gap-2">
-                  <span className="chip">{p.categorie}</span>
-                  {p.id === 'mika' && (
-                    <span className="chip" style={{ color: 'var(--color-c6)' }}>
-                      <span className="size-1.5 rounded-full bg-c6" /> En production
-                    </span>
+          {vedettes.map((p, i) => {
+            const Wrapper = p.etudeDeCas ? Link : 'div'
+            const wrapperProps = p.etudeDeCas
+              ? { to: p.etudeDeCas, className: 'card-link group flex h-full flex-col p-7' }
+              : { className: 'card flex h-full flex-col p-7' }
+            return (
+              <Enter key={p.id} delay={i * 0.08}>
+                <Wrapper {...wrapperProps}>
+                  <div className="flex flex-wrap items-center gap-2">
+                    <span className="chip">{p.categorie}</span>
+                    {p.enProduction && (
+                      <span className="chip" style={{ color: 'var(--color-c6)' }}>
+                        <span className="size-1.5 rounded-full bg-c6" /> En production
+                      </span>
+                    )}
+                    {p.confidentiel && <span className="chip">Confidentiel</span>}
+                  </div>
+
+                  <h3 className="mt-5 text-[1.6rem] font-bold">{p.titre}</h3>
+                  <p className="mt-1 text-[0.95rem] text-fg-3">{p.sousTitre}</p>
+                  <p className="mt-4 flex-1 text-[0.98rem] leading-relaxed text-fg-2">
+                    {p.description}
+                  </p>
+
+                  <div className="mt-6 flex flex-wrap gap-2">
+                    {p.stack.slice(0, 6).map((s) => (
+                      <span key={s} className="tag">{s}</span>
+                    ))}
+                  </div>
+
+                  {p.etudeDeCas && (
+                    <p className="mt-6 inline-flex items-center gap-1.5 text-[0.9rem] font-semibold text-brand">
+                      Voir le projet
+                      <span aria-hidden className="transition-transform group-hover:translate-x-1">→</span>
+                    </p>
                   )}
-                </div>
-
-                <h3 className="mt-5 text-[1.6rem] font-bold">{p.titre}</h3>
-                <p className="mt-1 text-[0.95rem] text-fg-3">{p.sousTitre}</p>
-                <p className="mt-4 flex-1 text-[0.98rem] leading-relaxed text-fg-2">
-                  {p.description}
-                </p>
-
-                <div className="mt-6 flex flex-wrap gap-2">
-                  {p.stack.slice(0, 6).map((s) => (
-                    <span key={s} className="tag">{s}</span>
-                  ))}
-                </div>
-
-                <p className="mt-6 inline-flex items-center gap-1.5 text-[0.9rem] font-semibold text-brand">
-                  Voir le projet
-                  <span aria-hidden className="transition-transform group-hover:translate-x-1">→</span>
-                </p>
-              </Link>
-            </Enter>
-          ))}
+                </Wrapper>
+              </Enter>
+            )
+          })}
         </div>
 
         <div className="mt-8 text-center">
