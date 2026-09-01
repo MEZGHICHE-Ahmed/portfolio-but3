@@ -228,9 +228,9 @@ export default function Mika() {
       <Suite
         liens={[
           {
-            to: '/realisations/coppelis',
+            to: '/realisations/agent-vocal',
             code: 'Étude de cas suivante',
-            titre: 'L’agent vocal Coppelis',
+            titre: 'L’agent vocal téléphonique',
             texte: 'Trancher par la mesure, et laisser la décision dans le code plutôt que dans le modèle.',
             action: 'Lire l’étude',
           },

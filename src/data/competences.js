@@ -135,7 +135,7 @@ export const competences = [
     ],
     traces: [
       {
-        titre: "Coppelis — reconnaître un nom mal transcrit",
+        titre: "Agent vocal — reconnaître un nom mal transcrit",
         contexte: "Alternance Cloud Inspire — agent vocal, recherche floue de noms",
         type: "Expérience professionnelle",
         acs: ["AC32.02", "AC32.03"],
@@ -145,7 +145,7 @@ export const competences = [
           "Méthode et bibliothèque choisies puis calibrées sur des cas réels — pas d'après la documentation",
           "Le seuil est un arbitrage justifié : proposer un nom à tort coûte une question, ne pas reconnaître un technicien coûte un transfert",
         ],
-        preuves: [{ label: "Étude de cas complète", url: "/realisations/coppelis" }],
+        preuves: [{ label: "Étude de cas complète", url: "/realisations/agent-vocal" }],
       },
       {
         titre: "Audiodescription — réduire le coût d'un pipeline de modèles lourds",
@@ -177,7 +177,7 @@ export const competences = [
     bilan:
       "Je suis passé de la mesure d'algorithmes sur des jeux de test, en formation, à l'optimisation de systèmes qui tournent devant de vrais utilisateurs. Ce qui a changé n'est pas la technique mais la discipline : je formule le critère avant de choisir, je mesure au lieu de supposer, et j'accepte qu'une méthode élégante soit écartée par un essai qui la contredit.",
     pistes: [
-      "Évaluer finement le prototype à modèle audio unique de Coppelis, qui supprime deux étapes du pipeline.",
+      "Évaluer finement le prototype à modèle audio unique de l'agent vocal, qui supprime deux étapes du pipeline.",
       "Systématiser le profilage avant optimisation plutôt que raisonner sur le code lu.",
       "Mesurer l'empreinte des traitements d'IA pour objectiver leur coût environnemental.",
     ],
