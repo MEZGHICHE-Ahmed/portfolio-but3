@@ -9,13 +9,13 @@ const NAV = [
   ['/profil', 'Profil'],
 ]
 
-/** Monogramme : les initiales dans un carré dégradé. */
+/** Monogramme : les initiales à l'encre, comme un cachet. */
 function Logo() {
   return (
     <Link to="/" className="group flex items-center gap-3">
       <span
-        className="grid size-9 place-items-center rounded-xl text-[0.82rem] font-extrabold text-white"
-        style={{ background: 'linear-gradient(135deg, var(--color-brand), var(--color-brand-2))' }}
+        className="grid size-9 place-items-center rounded-md text-[0.82rem] font-extrabold"
+        style={{ background: 'var(--color-fg)', color: 'var(--color-bg)' }}
       >
         {profil.initiales}
       </span>
@@ -63,7 +63,7 @@ export function Header() {
                 <NavLink
                   to={to}
                   className={({ isActive }) =>
-                    `rounded-full px-4 py-2 text-[0.9rem] font-medium transition-colors ${
+                    `rounded-md px-4 py-2 text-[0.9rem] font-medium transition-colors ${
                       isActive
                         ? 'bg-surface-2 text-fg'
                         : 'text-fg-2 hover:bg-surface/70 hover:text-fg'
@@ -87,7 +87,7 @@ export function Header() {
           aria-expanded={open}
           aria-controls="nav-mobile"
           aria-label={open ? 'Fermer le menu' : 'Ouvrir le menu'}
-          className="grid size-10 place-items-center rounded-xl border border-line bg-surface md:hidden"
+          className="grid size-10 place-items-center rounded-md border border-line bg-surface md:hidden"
         >
           <span aria-hidden className="text-[1.05rem]">{open ? '✕' : '☰'}</span>
         </button>
@@ -101,7 +101,7 @@ export function Header() {
                 <NavLink
                   to={to}
                   className={({ isActive }) =>
-                    `block rounded-xl px-4 py-3 text-[0.98rem] font-medium ${
+                    `block rounded-md px-4 py-3 text-[0.98rem] font-medium ${
                       isActive ? 'bg-surface-2 text-fg' : 'text-fg-2'
                     }`
                   }
@@ -124,7 +124,7 @@ export function Header() {
         className="absolute inset-x-0 -bottom-px h-0.5 origin-left transition-transform duration-150"
         style={{
           transform: `scaleX(${avancee})`,
-          background: 'linear-gradient(90deg, var(--color-brand), var(--color-brand-2))',
+          background: 'var(--color-brand)',
         }}
       />
     </header>

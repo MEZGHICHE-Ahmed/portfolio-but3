@@ -3,77 +3,73 @@
 /* ============================================================================
    DIRECTION ARTISTIQUE
 
-   Thème sombre, contrasté, coloré. Les sections se distinguent par des
-   surfaces surélevées plutôt que par des filets ; chaque compétence a sa
-   couleur, reprise partout où elle apparaît (carte, page, badge de projet) ;
-   les blocs cliquables se soulèvent au survol.
+   Dossier d'ingénierie sur papier : fond clair et chaud, titres en sérif de
+   caractère (Fraunces), étiquettes en mono, filets nets plutôt qu'ombres.
+   Un seul accent — vermillon — utilisé avec parcimonie ; chaque compétence
+   garde sa couleur, recalibrée en encre pour le fond clair.
 ============================================================================ */
 
 @theme {
-  /* ---- Surfaces (du plus profond au plus élevé) ---- */
-  --color-bg: #0b0f19;
-  --color-surface: #131826;
-  --color-surface-2: #1b2131;
-  --color-surface-3: #252c3f;
-  --color-line: #2c3448;
-  --color-line-2: #3c465f;
+  /* ---- Papier (du fond à la carte) ---- */
+  --color-bg: #f4f1e8;
+  --color-surface: #fdfbf5;
+  --color-surface-2: #ede8da;
+  --color-surface-3: #e5dfcc;
+  --color-line: #d9d2bf;
+  --color-line-2: #bfb69c;
 
-  /* ---- Texte ---- */
-  --color-fg: #f2f5fa;
-  --color-fg-2: #b6c0d4;
-  --color-fg-3: #7d8AA3;
+  /* ---- Encres ---- */
+  --color-fg: #211d14;
+  --color-fg-2: #504a3c;
+  --color-fg-3: #7d7663;
 
-  /* ---- Accent principal ---- */
-  --color-brand: #5b8cff;
-  --color-brand-2: #8b6cff;
+  /* ---- Accent principal : vermillon ---- */
+  --color-brand: #bc3f1f;
+  --color-brand-2: #8f2f16;
 
-  /* ---- Couleurs des trois compétences ---- */
-  --color-c1: #4f9dff;   /* bleu   — réaliser un développement */
-  --color-c2: #b06cf5;   /* violet — optimiser */
-  --color-c6: #2fbe8f;   /* vert   — collaborer */
+  /* ---- Couleurs des trois compétences (encres sur papier) ---- */
+  --color-c1: #22577e;   /* bleu pétrole — réaliser un développement */
+  --color-c2: #8a5a0b;   /* ocre        — optimiser */
+  --color-c6: #276b4e;   /* vert sapin  — collaborer */
 
   /* ---- Typographie ---- */
-  --font-sans: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, "Segoe UI",
+  --font-sans: "Instrument Sans", -apple-system, BlinkMacSystemFont, "Segoe UI",
     Roboto, Helvetica, Arial, sans-serif;
+  --font-display: "Fraunces", Georgia, "Times New Roman", serif;
   --font-mono: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace;
 
-  --radius-lg: 18px;
-  --radius-md: 12px;
+  --radius-lg: 6px;
+  --radius-md: 4px;
 }
 
 @layer base {
   html {
-    color-scheme: dark;
+    color-scheme: light;
     -webkit-text-size-adjust: 100%;
     scroll-behavior: smooth;
   }
 
   body {
     background-color: var(--color-bg);
-    /* Deux halos colorés fixes : le fond n'est jamais un aplat mort. */
-    background-image:
-      radial-gradient(900px 620px at 12% -8%, rgba(91, 140, 255, 0.16), transparent 62%),
-      radial-gradient(760px 560px at 92% 4%, rgba(139, 108, 255, 0.13), transparent 60%);
-    background-attachment: fixed;
     color: var(--color-fg);
     font-family: var(--font-sans);
     font-size: 16px;
     line-height: 1.65;
-    letter-spacing: -0.011em;
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
   }
 
   h1, h2, h3, h4 {
-    font-weight: 700;
-    line-height: 1.15;
-    letter-spacing: -0.028em;
+    font-family: var(--font-display);
+    font-weight: 600;
+    line-height: 1.12;
+    letter-spacing: -0.01em;
     text-wrap: balance;
   }
 
   table, time, .tnum { font-variant-numeric: tabular-nums; }
 
-  ::selection { background: rgba(91, 140, 255, 0.35); color: #fff; }
+  ::selection { background: rgba(188, 63, 31, 0.18); color: var(--color-fg); }
 
   ::-webkit-scrollbar { width: 12px; height: 12px; }
   ::-webkit-scrollbar-track { background: var(--color-bg); }
@@ -82,12 +78,12 @@
     border: 3px solid var(--color-bg);
     border-radius: 999px;
   }
-  ::-webkit-scrollbar-thumb:hover { background: #4d5a78; }
+  ::-webkit-scrollbar-thumb:hover { background: #a89d7f; }
 
   :focus-visible {
     outline: 2px solid var(--color-brand);
     outline-offset: 3px;
-    border-radius: 6px;
+    border-radius: 3px;
   }
 
   [id] { scroll-margin-top: 6.5rem; }
@@ -103,7 +99,7 @@
   }
   .measure { max-width: 70ch; }
 
-  /* ---- Carte : la brique de base de la mise en page ---- */
+  /* ---- Carte : un encart à filet, sans ombre ---- */
   .card {
     background: var(--color-surface);
     border: 1px solid var(--color-line);
@@ -115,30 +111,28 @@
     border-radius: var(--radius-lg);
   }
 
-  /* Carte cliquable : se soulève et s'éclaire au survol. */
+  /* Carte cliquable : le filet passe à l'encre, l'ombre reste discrète. */
   .card-link {
     background: var(--color-surface);
     border: 1px solid var(--color-line);
     border-radius: var(--radius-lg);
-    transition: transform 0.22s ease, border-color 0.22s ease,
-                box-shadow 0.22s ease, background-color 0.22s ease;
+    transition: transform 0.18s ease, border-color 0.18s ease, box-shadow 0.18s ease;
   }
   .card-link:hover {
-    transform: translateY(-3px);
-    background: var(--color-surface-2);
-    border-color: var(--color-line-2);
-    box-shadow: 0 20px 44px -24px rgba(0, 0, 0, 0.85);
+    transform: translateY(-2px);
+    border-color: var(--color-fg-3);
+    box-shadow: 0 2px 0 0 var(--color-line);
   }
 
-  /* ---- Pastilles & badges ---- */
+  /* ---- Pastilles & badges : des étiquettes imprimées ---- */
   .chip {
     display: inline-flex;
     align-items: center;
     gap: 0.4rem;
-    padding: 0.3rem 0.7rem;
-    border-radius: 999px;
-    border: 1px solid var(--color-line);
-    background: var(--color-surface-2);
+    padding: 0.28rem 0.62rem;
+    border-radius: var(--radius-md);
+    border: 1px solid var(--color-line-2);
+    background: transparent;
     color: var(--color-fg-2);
     font-size: 0.76rem;
     font-weight: 500;
@@ -148,42 +142,42 @@
   .tag {
     display: inline-flex;
     align-items: center;
-    padding: 0.24rem 0.6rem;
-    border-radius: 7px;
-    background: var(--color-surface-3);
+    padding: 0.24rem 0.55rem;
+    border-radius: var(--radius-md);
+    background: var(--color-surface-2);
+    border: 1px solid var(--color-line);
     color: var(--color-fg-2);
     font-family: var(--font-mono);
     font-size: 0.72rem;
     letter-spacing: -0.01em;
   }
 
-  /* ---- Boutons ---- */
+  /* ---- Boutons : encre pleine, vermillon au survol ---- */
   .btn {
     display: inline-flex;
     align-items: center;
     justify-content: center;
     gap: 0.5rem;
-    padding: 0.72rem 1.35rem;
-    border-radius: 999px;
+    padding: 0.7rem 1.3rem;
+    border-radius: var(--radius-lg);
     font-size: 0.94rem;
     font-weight: 600;
-    transition: transform 0.2s ease, background-color 0.2s ease,
-                border-color 0.2s ease, box-shadow 0.2s ease;
+    transition: background-color 0.18s ease, border-color 0.18s ease,
+                color 0.18s ease, transform 0.18s ease;
     white-space: nowrap;
   }
   .btn-primary {
-    background: linear-gradient(135deg, var(--color-brand), var(--color-brand-2));
-    color: #fff;
-    box-shadow: 0 12px 30px -14px rgba(91, 140, 255, 0.9);
+    background: var(--color-fg);
+    color: var(--color-bg);
   }
-  .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 18px 40px -16px rgba(91, 140, 255, 1); }
+  .btn-primary:hover { background: var(--color-brand); color: #fff; }
 
   .btn-ghost {
-    background: var(--color-surface-2);
-    border: 1px solid var(--color-line);
+    background: transparent;
+    border: 1px solid var(--color-line-2);
     color: var(--color-fg);
   }
-  .btn-ghost:hover { transform: translateY(-2px); border-color: var(--color-line-2); background: var(--color-surface-3); }
+  .btn-ghost:hover { border-color: var(--color-fg); }
 
   /* ---- Surtitre de section ---- */
   .eyebrow {
@@ -201,7 +195,6 @@
     content: "";
     width: 1.5rem;
     height: 2px;
-    border-radius: 2px;
     background: currentColor;
   }
 
@@ -215,7 +208,7 @@
   /* ---- Lien souligné ---- */
   .link {
     color: var(--color-brand);
-    border-bottom: 1px solid color-mix(in srgb, var(--color-brand) 35%, transparent);
+    border-bottom: 1px solid color-mix(in srgb, var(--color-brand) 40%, transparent);
     transition: border-color 0.15s, color 0.15s;
   }
   .link:hover { border-color: var(--color-brand); }
@@ -231,12 +224,11 @@
   }
 }
 
-/* ---- Dégradé de texte pour les grands titres ---- */
+/* ---- Accent des grands titres : l'italique sérif, à l'encre vermillon ---- */
 .text-gradient {
-  background: linear-gradient(120deg, #ffffff 8%, #b9cbff 52%, #c9b3ff 96%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
+  font-family: var(--font-display);
+  font-style: italic;
+  color: var(--color-brand);
 }
 
 @media (prefers-reduced-motion: reduce) {

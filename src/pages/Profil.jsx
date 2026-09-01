@@ -77,7 +77,7 @@ export default function Profil() {
                 <span
                   aria-hidden
                   className="mt-1.5 size-2 shrink-0 rounded-full"
-                  style={{ background: 'linear-gradient(135deg, var(--color-brand), var(--color-brand-2))' }}
+                  style={{ background: 'var(--color-brand)' }}
                 />
                 <span className="text-[0.96rem] leading-relaxed">{a}</span>
               </li>
@@ -91,7 +91,7 @@ export default function Profil() {
         <Enter>
           <div
             className="card p-10 text-center sm:p-14"
-            style={{ background: 'linear-gradient(135deg, rgba(91,140,255,0.14), rgba(139,108,255,0.10))' }}
+            style={{ background: 'var(--color-surface-2)' }}
           >
             <h2 className="text-[clamp(1.7rem,3.6vw,2.4rem)] font-extrabold">Me contacter</h2>
             <p className="mx-auto mt-4 max-w-lg text-[1rem] text-fg-2">
