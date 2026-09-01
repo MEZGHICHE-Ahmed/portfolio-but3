@@ -17,7 +17,7 @@ export default function Home() {
       <section className="sheet pb-16 pt-16 sm:pt-24">
         <div className="grid gap-12 lg:grid-cols-[1.35fr_1fr] lg:items-center lg:gap-16">
           <div>
-            <h1 className="text-[clamp(2.4rem,6vw,4rem)] font-extrabold leading-[1.06]">
+            <h1 className="text-[clamp(2.4rem,6vw,4rem)] font-bold leading-[1.06]">
               Ahmed Mezghiche,
               <br />
               <span className="text-gradient">développeur & apprenti cloud.</span>
@@ -43,7 +43,7 @@ export default function Home() {
             <dl className="mt-14 grid grid-cols-2 gap-6 sm:grid-cols-4">
               {chiffresCles.map((c) => (
                 <div key={c.label}>
-                  <dt className="text-[1.9rem] font-extrabold leading-none text-gradient">
+                  <dt className="text-[1.9rem] font-bold leading-none text-gradient">
                     {c.valeur}
                   </dt>
                   <dd className="mt-2 text-[0.84rem] leading-snug text-fg-3">{c.label}</dd>
@@ -57,7 +57,7 @@ export default function Home() {
             <div className="card p-7">
               <div className="flex items-center gap-4">
                 <span
-                  className="grid size-16 shrink-0 place-items-center rounded-md text-[1.3rem] font-extrabold"
+                  className="grid size-16 shrink-0 place-items-center rounded-md text-[1.3rem] font-bold"
                   style={{ background: 'var(--color-fg)', color: 'var(--color-bg)' }}
                 >
                   {profil.initiales}
@@ -252,7 +252,7 @@ export default function Home() {
             className="card overflow-hidden p-10 text-center sm:p-14"
             style={{ background: 'var(--color-surface-2)' }}
           >
-            <h2 className="text-[clamp(1.8rem,4vw,2.6rem)] font-extrabold">
+            <h2 className="text-[clamp(1.8rem,4vw,2.6rem)] font-bold">
               Travaillons ensemble
             </h2>
             <p className="mx-auto mt-4 max-w-xl text-[1.02rem] text-fg-2">

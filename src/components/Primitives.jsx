@@ -97,7 +97,7 @@ export function PageHead({ ariane, kicker, title, lead, meta, accent }) {
         </p>
       )}
 
-      <h1 className="mt-5 text-[clamp(2.1rem,5.4vw,3.5rem)] font-extrabold leading-[1.08]">
+      <h1 className="mt-5 text-[clamp(2.1rem,5.4vw,3.5rem)] font-bold leading-[1.08]">
         {title}
       </h1>
 

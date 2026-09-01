@@ -93,7 +93,7 @@ export default function Profil() {
             className="card p-10 text-center sm:p-14"
             style={{ background: 'var(--color-surface-2)' }}
           >
-            <h2 className="text-[clamp(1.7rem,3.6vw,2.4rem)] font-extrabold">Me contacter</h2>
+            <h2 className="text-[clamp(1.7rem,3.6vw,2.4rem)] font-bold">Me contacter</h2>
             <p className="mx-auto mt-4 max-w-lg text-[1rem] text-fg-2">
               Disponible pour échanger sur une opportunité, un projet ou simplement discuter
               technique.
