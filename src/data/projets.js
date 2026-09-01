@@ -1,0 +1,202 @@
+// ---------------------------------------------------------------------------
+// Réalisations — missions professionnelles et projets universitaires.
+// Le champ `competences` renvoie aux pages détaillées (c1, c2, c6).
+// ---------------------------------------------------------------------------
+
+const GITHUB = "https://github.com/RedOne777";
+
+export const projets = [
+  {
+    id: "mika",
+    type: "pro",
+    titre: "Mika",
+    sousTitre: "Cloud Inspire — plateforme commerciale augmentée par l'IA",
+    categorie: "Alternance · 3ᵉ année",
+    periode: "2025 – 2026",
+    vedette: true,
+    description:
+      "Un commercial photographie une carte de visite sur un salon ; les informations en sont extraites automatiquement, enrichies, puis poussées dans le logiciel de gestion commerciale du client. Une application mobile, une interface web et un serveur, en production et utilisés.",
+    points: [
+      "Trois supports pour un même produit : mobile (React Native / Expo), web (Vue.js) et serveur (FastAPI)",
+      "Traitement asynchrone par file : le téléphone n'attend jamais les dix à soixante secondes d'analyse",
+      "Modèles d'IA accédés via une interface standard — basculer vers un modèle hébergé chez le client ne change qu'un paramètre",
+      "Multi-organisations : cloisonnement des données à quatre niveaux, vérifié en base et non déclaré par le client",
+      "Images hors base dans un stockage objet, secrets chiffrés, mots de passe hachés, authentification déléguée",
+    ],
+    stack: ["FastAPI", "Vue.js", "React Native", "PostgreSQL", "Prisma", "MinIO", "Faktory", "Ollama", "Zitadel"],
+    competences: ["c1", "c2", "c6"],
+    etudeDeCas: "/realisations/mika",
+    lien: null,
+  },
+  {
+    id: "coppelis",
+    type: "pro",
+    titre: "Agent vocal Coppelis",
+    sousTitre: "Cloud Inspire — contrôle d'accès de sites industriels",
+    categorie: "Alternance · 3ᵉ année",
+    periode: "2026",
+    vedette: true,
+    confidentiel: true,
+    description:
+      "Une preuve de concept d'agent téléphonique qui répond, comprend son interlocuteur et décide d'autoriser ou non l'accès à un site industriel — à la place d'un opérateur qui traite deux cent cinquante appels identiques par jour.",
+    points: [
+      "La décision reste dans le code, jamais dans le modèle : le LLM extrait quatre informations, il ne tranche rien",
+      "Une règle métier posée avant le code : l'agent ne refuse jamais sur un doute, il transfère à un humain",
+      "Recherche floue de noms calibrée sur des appels réels, après l'échec constaté de deux autres méthodes",
+      "Attribution concurrente de numéros de permis garantie par verrouillage de ligne et transaction",
+      "Jeux de données pseudonymisés, vérifiés par un second programme indépendant du générateur",
+    ],
+    stack: ["Python", "LiveKit", "PostgreSQL", "STT / LLM / TTS", "Similarité de chaînes"],
+    competences: ["c1", "c2", "c6"],
+    etudeDeCas: "/realisations/coppelis",
+    lien: null,
+  },
+  {
+    id: "gateway-iam",
+    type: "uni",
+    titre: "Gateway IAM",
+    sousTitre: "IUT de Créteil-Vitry — provisionnement d'identités",
+    categorie: "SAÉ · 3ᵉ année",
+    periode: "2026",
+    description:
+      "Une passerelle qui reçoit les demandes de provisionnement émises par un référentiel d'identités et les applique sur cinq types de services cibles, avec validation, reprise sur échec et journal d'audit complet.",
+    points: [
+      "Chaîne asynchrone : file de messages, orchestrateur, connecteurs par type de cible",
+      "Cinq cibles supportées : MySQL, PostgreSQL, MongoDB, LDAP et Odoo",
+      "Catalogue de cibles déclaratif en YAML — ajouter une base ne demande plus de modifier le code",
+      "Reprise avec backoff, file d'échec, journal d'audit et points de contrôle d'exploitation",
+      "Déploiement automatisé par Ansible, intégration continue et tests unitaires",
+    ],
+    stack: ["FastAPI", "RabbitMQ", "Prisma", "PostgreSQL", "Ansible", "Docker", "GitHub Actions"],
+    competences: ["c1", "c2"],
+    lien: { github: GITHUB },
+  },
+  {
+    id: "sncf",
+    type: "pro",
+    titre: "Applications internes",
+    sousTitre: "SNCF Voyageurs — développement fullstack",
+    categorie: "Alternance · 2ᵉ année",
+    periode: "2024 – 2025",
+    confidentiel: true,
+    description:
+      "Maintenance et développement de nouvelles fonctionnalités sur des applications internes, au sein d'une équipe constituée. Ma première confrontation à du code que je n'avais pas écrit.",
+    points: [
+      "Évolutions et corrections sur un existant, avec ses conventions et son intention d'origine",
+      "Travail en équipe : branches, intégration, revues de code",
+      "Découverte de ce qui sépare une contribution qui fonctionne d'une contribution acceptée",
+    ],
+    stack: ["Développement fullstack", "Git", "Travail en équipe"],
+    competences: ["c1", "c6"],
+    lien: null,
+  },
+  {
+    id: "hydrometrie",
+    type: "uni",
+    titre: "Site Hydrométrie",
+    sousTitre: "Consultation de données de stations hydrométriques",
+    categorie: "SAÉ · 1ʳᵉ année",
+    periode: "2024",
+    description:
+      "Ma première application web complète : consultation de relevés de stations, recherche par région et département, statistiques et cartes interactives.",
+    points: [
+      "Architecture MVC appliquée de bout en bout (Flask)",
+      "Base SQLite alimentée depuis des données ouvertes",
+      "Cartographie interactive en SVG, statistiques hebdomadaires",
+    ],
+    stack: ["Python", "Flask", "SQLite", "SVG", "MVC"],
+    competences: ["c1"],
+    lien: null,
+  },
+  {
+    id: "tris",
+    type: "uni",
+    titre: "Comparaison d'approches algorithmiques",
+    sousTitre: "Complexité en temps et en mémoire",
+    categorie: "SAÉ · 1ʳᵉ année, prolongée en 3ᵉ",
+    periode: "2024 – 2026",
+    description:
+      "Implémentation et mesure comparée d'algorithmes de tri et de recherche, confrontation des temps mesurés aux complexités théoriques. Le point d'ancrage du réflexe de mesure.",
+    points: [
+      "Tris et recherches implémentés en Python et en C",
+      "Mesures sur jeux de tailles croissantes : meilleur cas, cas moyen, pire cas",
+      "Tracé des courbes et confrontation aux complexités attendues",
+      "Prolongé en 3ᵉ année par l'analyse de l'occupation mémoire",
+    ],
+    stack: ["C", "Python", "Algorithmique", "Mesure de performance"],
+    competences: ["c2"],
+    lien: null,
+  },
+  {
+    id: "nosql",
+    type: "uni",
+    titre: "Bases de données nouvelle génération",
+    sousTitre: "Documentaire, clé-valeur et graphe",
+    categorie: "Ressource · 3ᵉ année",
+    periode: "2025",
+    description:
+      "Exploration comparée de trois familles de bases non relationnelles, et des cas où chacune est pertinente face à un modèle relationnel.",
+    points: [
+      "Base documentaire : modélisation sans schéma et agrégations",
+      "Base clé-valeur : cache et structures de données en mémoire",
+      "Base graphe : parcours de relations et requêtes de chemins",
+    ],
+    stack: ["MongoDB", "Redis", "Neo4j"],
+    competences: ["c2"],
+    lien: null,
+  },
+  {
+    id: "microservices",
+    type: "uni",
+    titre: "Microservices et passerelle d'API",
+    sousTitre: "Développement avancé",
+    categorie: "Ressource · 3ᵉ année",
+    periode: "2026",
+    description:
+      "Découpage d'une application en services indépendants derrière une passerelle d'API — le pendant académique de ce que j'ai construit en entreprise.",
+    points: [
+      "Services indépendants communicant par messages",
+      "Passerelle d'API en point d'entrée unique",
+      "Conteneurisation et orchestration locale",
+    ],
+    stack: ["NestJS", "Node.js", "Docker"],
+    competences: ["c1"],
+    lien: { github: GITHUB },
+  },
+  {
+    id: "automatisation",
+    type: "uni",
+    titre: "Automatisation et intégration continue",
+    sousTitre: "Deux services, une chaîne de livraison",
+    categorie: "Ressource · 3ᵉ année",
+    periode: "2025",
+    description:
+      "Deux services équivalents dans deux écosystèmes différents, conteneurisés et publiés automatiquement par une chaîne d'intégration continue.",
+    points: [
+      "Un service Flask et un service Spring Boot exposant la même API",
+      "Conteneurisation et composition des services avec leur base",
+      "Publication automatisée des images par intégration continue",
+    ],
+    stack: ["Flask", "Spring Boot", "Docker", "GitHub Actions", "MySQL"],
+    competences: ["c1"],
+    lien: null,
+  },
+  {
+    id: "reseau",
+    type: "uni",
+    titre: "Maquette réseau d'entreprise",
+    sousTitre: "Administration et réseaux",
+    categorie: "Ressource · 2ᵉ année",
+    periode: "2024",
+    description:
+      "Conception et configuration d'une infrastructure réseau d'entreprise simulée, en réseau local puis étendu.",
+    points: [
+      "Adressage, routage et segmentation d'un réseau d'entreprise",
+      "Configuration d'équipements et tests de connectivité",
+      "Compte rendu d'analyse du comportement du réseau",
+    ],
+    stack: ["Packet Tracer", "LAN / WAN", "Routage"],
+    competences: [],
+    lien: null,
+  },
+];
