@@ -36,7 +36,7 @@
   /* ---- Typographie ---- */
   --font-sans: "Instrument Sans", -apple-system, BlinkMacSystemFont, "Segoe UI",
     Roboto, Helvetica, Arial, sans-serif;
-  --font-display: "Fraunces", Georgia, "Times New Roman", serif;
+  --font-display: "Space Grotesk", "Instrument Sans", -apple-system, sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace;
 
   --radius-lg: 6px;
@@ -62,9 +62,9 @@
 
   h1, h2, h3, h4 {
     font-family: var(--font-display);
-    font-weight: 600;
+    font-weight: 700;
     line-height: 1.12;
-    letter-spacing: -0.01em;
+    letter-spacing: -0.02em;
     text-wrap: balance;
   }
 
@@ -225,10 +225,9 @@
   }
 }
 
-/* ---- Accent des grands titres : l'italique sérif, à l'encre vermillon ---- */
+/* ---- Accent des grands titres : l'encre vermillon, sans fioriture ---- */
 .text-gradient {
   font-family: var(--font-display);
-  font-style: italic;
   color: var(--color-brand);
 }
 

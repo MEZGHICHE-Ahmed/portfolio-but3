@@ -14,7 +14,7 @@ function Logo() {
   return (
     <Link to="/" className="group flex items-center gap-3">
       <span
-        className="grid size-9 place-items-center rounded-md text-[0.82rem] font-extrabold"
+        className="grid size-9 place-items-center rounded-md text-[0.82rem] font-bold"
         style={{ background: 'var(--color-fg)', color: 'var(--color-bg)' }}
       >
         {profil.initiales}

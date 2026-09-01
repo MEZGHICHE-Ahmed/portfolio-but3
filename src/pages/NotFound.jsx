@@ -4,7 +4,7 @@ export default function NotFound() {
   return (
     <div className="sheet grid min-h-[60vh] place-items-center py-24 text-center">
       <div>
-        <p className="text-[clamp(4rem,14vw,8rem)] font-extrabold leading-none text-gradient">
+        <p className="text-[clamp(4rem,14vw,8rem)] font-bold leading-none text-gradient">
           404
         </p>
         <h1 className="mt-4 text-[1.6rem] font-bold">Cette page n’existe pas</h1>
