@@ -1,5 +1,5 @@
 import { useEffect } from 'react'
-import { Routes, Route, Navigate, useLocation } from 'react-router-dom'
+import { Routes, Route, useLocation } from 'react-router-dom'
 import { Header, Footer } from './components/Chrome'
 import Home from './pages/Home'
 import Competences from './pages/Competences'
@@ -36,8 +36,6 @@ export default function App() {
           <Route path="/realisations" element={<Realisations />} />
           <Route path="/realisations/mika" element={<Mika />} />
           <Route path="/realisations/agent-vocal" element={<AgentVocal />} />
-          {/* Ancienne adresse de l'étude de cas : on redirige sans exposer le nom. */}
-          <Route path="/realisations/coppelis" element={<Navigate to="/realisations/agent-vocal" replace />} />
           <Route path="/parcours" element={<Parcours />} />
           <Route path="/profil" element={<Profil />} />
           <Route path="*" element={<NotFound />} />
