@@ -148,9 +148,11 @@ export default function CompetenceDetail() {
                     <h3 className="mt-4 text-[1.25rem] font-bold leading-snug">{t.titre}</h3>
                     <p className="mt-1 text-[0.92rem] text-fg-3">{t.contexte}</p>
 
-                    <p className="measure mt-5 text-[0.98rem] leading-[1.72] text-fg-2">
-                      {t.analyse}
-                    </p>
+                    <ul className="measure mt-5 space-y-2.5">
+                      {t.points.map((pt) => (
+                        <Puce key={pt} accent={accent}>{pt}</Puce>
+                      ))}
+                    </ul>
 
                     <div className="mt-6 flex flex-wrap gap-2 border-t border-line pt-5">
                       {t.stack.map((s) => (

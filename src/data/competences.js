@@ -51,52 +51,41 @@ export const competences = [
     traces: [
       {
         titre: "Mika — une architecture mobile + web + serveur, en production",
-        acs: ["AC31.01", "AC31.03"],
         contexte: "Alternance Cloud Inspire — plateforme commerciale augmentée par l'IA",
         type: "Expérience professionnelle",
-        stack: ["FastAPI", "Vue.js", "React Native / Expo", "PostgreSQL", "Prisma", "MinIO", "Faktory", "Ollama", "Zitadel"],
-        analyse:
-          "Ma réalisation la plus complète, et celle qui porte le niveau 3 : un même produit décliné sur trois supports — une application mobile pour les commerciaux en salon, une interface web pour les responsables, un serveur qui porte tous les traitements. J'ai conçu l'architecture seul, puis je l'ai exploitée en production. Le découpage en éléments indépendants n'est pas un effet de mode : chaque frontière répond à une contrainte constatée. Les images ne vont pas en base mais dans MinIO, parce qu'une base qui grossit de photos jamais interrogées rend les sauvegardes lentes. L'analyse d'une carte prend dix à soixante secondes, donc elle part dans une file Faktory et le téléphone reçoit une réponse immédiate — sur un salon, cela change complètement l'usage. L'accès aux modèles passe par Ollama, dont l'interface est identique à celle des fournisseurs commerciaux : basculer vers un modèle hébergé chez le client ne demande qu'un paramètre. Cette indépendance n'était pas théorique — le modèle de vision a été retiré sans préavis par son fournisseur en cours de projet, et la correction a tenu en quelques lignes parce que le nom du modèle n'était pas figé dans le code. Ma piste : la file locale hors-ligne sur mobile, un salon étant précisément un lieu où le réseau sature.",
+        acs: ["AC31.01", "AC31.03"],
+        stack: ["FastAPI", "Vue.js", "React Native / Expo", "PostgreSQL", "Faktory", "MinIO"],
+        points: [
+          "Une architecture choisie pour ses contraintes : mobile pour les commerciaux en salon, web pour les responsables, serveur pour tous les traitements",
+          "Intégrée en production réelle : déployée, surveillée et corrigée face à de vrais utilisateurs",
+          "Un choix d'architecture validé par les faits : le modèle de vision a été retiré par son fournisseur en cours de projet, la correction a tenu en quelques lignes",
+        ],
         preuves: [{ label: "Étude de cas complète", url: "/realisations/mika" }],
       },
       {
-        titre: "Coppelis — rendre l'agent indépendant du canal d'appel",
-        acs: ["AC31.01"],
-        contexte: "Alternance Cloud Inspire — POC d'agent vocal téléphonique",
-        type: "Expérience professionnelle",
-        stack: ["LiveKit", "Python", "PostgreSQL", "STT / LLM / TTS"],
-        analyse:
-          "Une conversation téléphonique impose des contraintes qu'on ne rencontre pas dans une application classique : l'audio circule dans les deux sens sans latence perceptible, il faut détecter la fin de parole et gérer les interruptions. J'ai bâti le service sur LiveKit, ce qui rend l'agent indépendant du moyen par lequel l'appel arrive. Le POC a été validé depuis un navigateur, mais la même logique fonctionnera sur une ligne téléphonique classique sans réécrire le dialogue. C'est un choix d'architecture assumé au départ, pas une conséquence heureuse — et c'est exactement ce que vise l'apprentissage critique « choisir et implémenter les architectures adaptées » : décider tôt de ce qui devra pouvoir changer plus tard.",
-        preuves: [{ label: "Étude de cas complète", url: "/realisations/coppelis" }],
-      },
-      {
-        titre: "Gateway IAM — s'insérer dans une chaîne existante",
-        acs: ["AC31.01", "AC31.02"],
-        contexte: "SAÉ de 3ᵉ année — provisionnement d'identités",
+        titre: "Gateway IAM — faire évoluer une chaîne de provisionnement",
+        contexte: "SAÉ de 3ᵉ année — provisionnement d'identités vers cinq types de cibles",
         type: "Projet universitaire",
-        stack: ["FastAPI", "RabbitMQ", "Prisma", "Ansible", "Docker", "GitHub Actions", "MidPoint"],
-        analyse:
-          "Ici l'enjeu n'était pas de partir d'une page blanche mais de m'insérer dans une chaîne existante : MidPoint émet des demandes de provisionnement, elles transitent par RabbitMQ, ma passerelle les valide et les applique sur cinq types de cibles (MySQL, PostgreSQL, MongoDB, LDAP, Odoo). J'ai traité le projet comme s'il devait tenir en exploitation : reprise avec backoff et file d'échec, journal d'audit complet, points de contrôle « /health » et « /metrics ». La décision dont je suis le plus satisfait est le catalogue de cibles en YAML : ajouter une nouvelle base d'un type déjà supporté se fait en déclaratif, sans toucher au code. J'ai réécrit le projet dans ce sens après avoir constaté que chaque nouvelle base m'obligeait à modifier la logique — la modularité s'est imposée par l'usage, pas par principe.",
+        acs: ["AC31.01", "AC31.02"],
+        stack: ["FastAPI", "RabbitMQ", "Ansible", "Docker", "GitHub Actions"],
+        points: [
+          "Une chaîne asynchrone conçue d'après les contraintes : file de messages, orchestrateur, connecteurs par type de cible",
+          "Le projet a évolué par l'usage : catalogue de cibles réécrit en déclaratif quand chaque ajout obligeait à modifier le code",
+          "Traité comme un service d'exploitation : reprise sur échec, journal d'audit, déploiement automatisé",
+        ],
         preuves: [{ label: "Dépôt du projet", url: GITHUB }],
       },
       {
-        titre: "SNCF Voyageurs — faire évoluer une application existante en équipe",
-        acs: ["AC31.02"],
-        contexte: "Alternance de 2ᵉ année — développement fullstack",
-        type: "Expérience professionnelle",
-        stack: ["Développement fullstack", "Git", "Applications internes"],
-        analyse:
-          "Ma première confrontation à du code que je n'avais pas écrit, dans une équipe constituée. J'y ai fait de la maintenance et des évolutions sur des applications internes — un exercice très différent du projet neuf : il faut comprendre l'intention d'origine avant de modifier quoi que ce soit, et accepter des conventions qui ne sont pas les siennes. Rétrospectivement, c'est l'étape qui manquait entre les SAÉ encadrées et l'autonomie complète de cette année : j'y ai appris à lire l'existant, ce qui m'a servi directement quand il a fallu reprendre et réécrire la configuration de Gateway IAM.",
-        preuves: [{ label: "Rapport d'activité 2024-2025", url: null }],
-      },
-      {
-        titre: "Plateforme souveraine — intégrer et exploiter une infrastructure complète",
-        acs: ["AC31.03"],
+        titre: "Plateforme souveraine — intégrer et exploiter en production",
         contexte: "Alternance Cloud Inspire — hébergement pour une agence nationale de cybersécurité",
         type: "Expérience professionnelle",
-        stack: ["Docker Compose", "Caddy + WAF", "CrowdSec", "GitLab CI", "Harbor", "Grafana + Loki", "Restic"],
-        analyse:
-          "La mission qui illustre le mieux l'apprentissage critique « intégrer des solutions dans un environnement de production » : migrer le site institutionnel et la messagerie d'une agence gouvernementale de cybersécurité depuis un hébergement mutualisé vers une plateforme que nous construisons et exploitons de bout en bout. Sept machines virtuelles, un rôle chacune, et une règle d'architecture posée dès le départ : chaque machine embarque son propre pare-feu applicatif et son agent de supervision, de sorte qu'un service se déploie et se retire indépendamment des autres. La migration a été volontairement progressive — le site d'abord, la messagerie ensuite — chaque phase avec ses indicateurs et son retour arrière documenté. Le détail qui m'a le plus appris : le pare-feu applicatif en mode blocage cassait la forge logicielle, dont les requêtes légitimes ressemblent à des attaques pour des règles génériques. Passer cette machine en détection seule, tout en gardant le blocage sur les services exposés au public, est un arbitrage qu'on ne rencontre qu'en exploitation réelle.",
+        acs: ["AC31.03"],
+        stack: ["Docker Compose", "Caddy + WAF", "GitLab CI", "Grafana + Loki", "Restic"],
+        points: [
+          "Sept machines virtuelles exploitées pour un client gouvernemental : site, messagerie, forge logicielle, supervision, sauvegardes",
+          "Chaque service embarque sa protection et sa supervision : il se déploie et se retire indépendamment des autres",
+          "Migration progressive — le site d'abord, la messagerie ensuite — avec retour arrière documenté à chaque phase",
+        ],
         preuves: [{ label: "Documentation d'architecture (confidentielle)", url: null }],
       },
     ],
@@ -146,64 +135,43 @@ export const competences = [
     ],
     traces: [
       {
-        titre: "Coppelis — reconnaître un nom mal transcrit : trois méthodes, une seule qui tient",
-        acs: ["AC32.02", "AC32.03"],
+        titre: "Coppelis — reconnaître un nom mal transcrit",
         contexte: "Alternance Cloud Inspire — agent vocal, recherche floue de noms",
         type: "Expérience professionnelle",
-        stack: ["Python", "Similarité de chaînes", "Calibration sur données réelles"],
-        analyse:
-          "La difficulté la plus tenace du projet, et ma meilleure preuve sur cette compétence. Au téléphone, depuis un environnement bruyant, les noms propres se transcrivent mal, et j'ai observé trois modes d'erreur distincts en conditions réelles : des lettres perdues, des frontières entre mots déplacées, et des lettres déplacées à l'intérieur d'un mot. Une comparaison stricte échoue dans les trois cas. J'ai d'abord essayé une comparaison phonétique, puis une distance d'édition : les deux ont échoué sur le troisième cas, parce qu'elles reposent sur des séquences de caractères que le déplacement détruit. La méthode retenue compare le nom entendu au référentiel selon plusieurs angles simultanés, dont un qui trie les lettres par ordre alphabétique — ce qui rend la comparaison insensible à leur position. Le point que je défends le plus : le seuil de déclenchement a été calibré à partir de cas d'appels réels, pas fixé arbitrairement, et il est délibérément placé pour proposer un nom un peu trop souvent plutôt que pas assez. Proposer à tort coûte une question ; ne pas reconnaître un technicien légitime provoque un transfert évitable. Les deux erreurs ne se valent pas.",
-        preuves: [{ label: "Étude de cas complète", url: "/realisations/coppelis" }],
-      },
-      {
-        titre: "Coppelis — choisir une voix par la mesure, et prévoir sa panne",
         acs: ["AC32.02", "AC32.03"],
-        contexte: "Alternance Cloud Inspire — synthèse vocale",
-        type: "Expérience professionnelle",
-        stack: ["TTS", "Bancs d'écoute", "Mécanisme de secours"],
-        analyse:
-          "Le livrable d'un appel est un numéro de permis épelé qui doit être noté sans erreur : le choix de la voix engage donc directement le service. Trois solutions ont été écartées, chaque fois pour une raison constatée et non supposée. La première, retenue sur la foi d'un comparatif public, s'est révélée inaccessible depuis notre serveur — son dispositif anti-abus assimile les requêtes venant d'un centre de données à un contournement. La deuxième, séduisante parce qu'elle partageait la facturation du service de transcription, a été écartée après écoute d'un appel réel : le modèle ajoutait des hésitations de lui-même. La troisième, qu'une documentation présentait comme la seule à honorer le réglage de vitesse, ne produisait aucun son — un défaut qui aurait rendu l'agent totalement muet en production s'il n'avait pas été détecté avant la mise en service. La solution finale a été validée à l'écoute sur le texte réel de l'agent, parmi six voix candidates, et sa vitesse volontairement réduite. J'ai enfin ajouté un service de secours qui partage la facturation de la transcription : le filet ne coûte rien tant qu'il ne sert pas. C'est la démarche que je retiens de ce projet — trancher par la mesure, pas par la documentation.",
-        preuves: [{ label: "Étude de cas complète", url: "/realisations/coppelis" }],
-      },
-      {
-        titre: "Mika — anticiper la latence perçue plutôt que la subir",
-        acs: ["AC32.01"],
-        contexte: "Alternance Cloud Inspire — traitement asynchrone",
-        type: "Expérience professionnelle",
-        stack: ["Faktory", "FastAPI", "Traitement asynchrone", "Reprise sur échec"],
-        analyse:
-          "L'analyse d'une image par un modèle de vision demande entre dix et soixante secondes selon la charge. Garder la connexion du téléphone ouverte pendant ce temps posait deux problèmes que j'ai anticipés avant d'écrire la ligne : l'utilisateur reste immobilisé, et la moindre coupure de réseau mobile fait perdre le travail. Les traitements partent donc dans une file et sont exécutés par un programme séparé ; le serveur répond immédiatement et le commercial enchaîne la carte suivante. Le gain ne se mesure pas en temps de calcul — il est identique — mais en temps d'attente perçu, qui tombe à zéro. Le mécanisme apporte en prime une robustesse : un traitement qui échoue est relancé jusqu'à trois fois, et l'état de chaque travail est conservé en base pour que le mobile suive la progression.",
-        preuves: [{ label: "Étude de cas complète", url: "/realisations/mika" }],
-      },
-      {
-        titre: "Coppelis — attribuer un numéro unique sous appels concurrents",
-        acs: ["AC32.01", "AC32.02"],
-        contexte: "Alternance Cloud Inspire — concurrence et intégrité",
-        type: "Expérience professionnelle",
-        stack: ["PostgreSQL", "Verrous de ligne", "Transactions"],
-        analyse:
-          "Le numéro de permis est tiré d'un compteur propre à chaque site. Avec deux cent cinquante appels par jour, deux appels simultanés lisant le même compteur attribueraient le même numéro à deux techniciens — inacceptable, puisque ce numéro est la preuve de l'autorisation. J'ai utilisé le verrouillage de ligne du moteur relationnel : la ligne du compteur concerné est verrouillée le temps de l'attribution, ce qui force les appels concurrents à attendre leur tour. Le point d'optimisation est que le verrou ne porte que sur la ligne du site concerné — les autres sites ne sont pas ralentis. L'attribution et l'écriture au journal sont par ailleurs dans une même transaction : sans cela, un numéro pourrait être communiqué sans qu'aucune trace n'en subsiste. C'est l'application directe de ce que le cours de bases de données appelle isolation, sur un cas où l'erreur aurait été visible depuis le terrain.",
-        preuves: [{ label: "Étude de cas complète", url: "/realisations/coppelis" }],
-      },
-      {
-        titre: "Vérifier une anonymisation par un second programme indépendant",
-        acs: ["AC32.02"],
-        contexte: "Alternance Cloud Inspire — protection des données personnelles",
-        type: "Expérience professionnelle",
-        stack: ["Python", "Pseudonymisation", "Vérification croisée"],
-        analyse:
-          "Déployer le POC sur un serveur exposé à Internet soulevait un problème que je n'avais pas anticipé : le référentiel contient des noms, téléphones et adresses de personnes réelles. J'ai produit des jeux pseudonymisés en conservant le format exact des fichiers d'origine, pour que les programmes d'import fonctionnent sans modification. Le point d'ingénierie qui compte : j'ai écrit deux programmes plutôt qu'un. Le premier génère, le second vérifie en sens inverse en cherchant les identités réelles dans l'intégralité des cellules produites. Cette vérification indépendante a détecté trois défauts du générateur. J'en ai tiré un principe que j'applique désormais partout : un programme qui affirme avoir anonymisé des données ne constitue pas une preuve — seule une vérification menée selon une logique différente apporte cette garantie.",
+        stack: ["Python", "Similarité de chaînes", "Calibration sur données réelles"],
+        points: [
+          "Trois modes d'erreur observés sur des appels réels, trois méthodes essayées : seule la comparaison multi-angles a résisté aux trois",
+          "Méthode et bibliothèque choisies puis calibrées sur des cas réels — pas d'après la documentation",
+          "Le seuil est un arbitrage justifié : proposer un nom à tort coûte une question, ne pas reconnaître un technicien coûte un transfert",
+        ],
         preuves: [{ label: "Étude de cas complète", url: "/realisations/coppelis" }],
       },
       {
         titre: "Audiodescription — réduire le coût d'un pipeline de modèles lourds",
-        acs: ["AC32.01", "AC32.03"],
         contexte: "Alternance Cloud Inspire — transcription et audiodescription pour l'audiovisuel",
         type: "Expérience professionnelle",
-        stack: ["Celery", "Whisper", "Modèles de vision", "Détection de scènes", "Parallélisme"],
-        analyse:
-          "Décrire une vidéo image par image avec un modèle de vision est inabordable : une heure de vidéo représente des dizaines de milliers d'images. Le levier n'est pas un modèle plus gros, c'est un découpage plus intelligent : une détection de scènes segmente d'abord la vidéo, trois images représentatives sont extraites par scène, et le modèle reçoit un lot groupé par appel plutôt qu'une image à la fois — le nombre d'appels dépend du contenu réel de la vidéo, pas de sa durée. La transcription de l'audio et l'analyse visuelle sont indépendantes, elles s'exécutent donc en parallèle ; la consolidation, qui a besoin des deux, ne démarre qu'à leur terme, orchestrée par la file de tâches. Les workers sont enfin séparés selon leur ressource critique — le GPU pour la transcription, des workers légers pour l'analyse et l'orchestration, un worker dédié à la synthèse vocale — chacun avec sa file, pour dimensionner indépendamment et éviter qu'un traitement lourd n'affame les autres.",
+        acs: ["AC32.01", "AC32.03"],
+        stack: ["Celery", "Whisper", "Modèles de vision", "Détection de scènes"],
+        points: [
+          "Coût anticipé avant d'écrire le code : décrire chaque image d'une heure de vidéo était inabordable",
+          "Détection de scènes puis trois images par scène : le nombre d'appels au modèle dépend du contenu, pas de la durée",
+          "Transcription et analyse visuelle en parallèle, workers séparés par ressource critique (GPU, léger, synthèse vocale)",
+        ],
         preuves: [{ label: "Documentation technique (confidentielle)", url: null }],
+      },
+      {
+        titre: "Mika — anticiper la latence perçue plutôt que la subir",
+        contexte: "Alternance Cloud Inspire — traitement asynchrone",
+        type: "Expérience professionnelle",
+        acs: ["AC32.01"],
+        stack: ["Faktory", "FastAPI", "Traitement asynchrone"],
+        points: [
+          "Dix à soixante secondes d'analyse par carte : l'attente perçue a été anticipée avant la première ligne de code",
+          "Traitement en file asynchrone : le téléphone reçoit une réponse immédiate, le commercial enchaîne la carte suivante",
+          "La file apporte la robustesse en prime : trois relances automatiques, état de chaque travail suivi en base",
+        ],
+        preuves: [{ label: "Étude de cas complète", url: "/realisations/mika" }],
       },
     ],
     bilan:
@@ -257,64 +225,43 @@ export const competences = [
       "Chez Cloud Inspire je porte mes projets seul : je ne peux pas démontrer cette compétence par l'encadrement d'une équipe, et je ne le prétends pas. Je la démontre par ce que le niveau 3 vise réellement — organiser une veille et la partager, comprendre les enjeux économiques du numérique, accompagner un changement dans une organisation, soutenir la conduite d'un projet — en m'appuyant aussi sur mon alternance de 2ᵉ année en équipe constituée.",
     traces: [
       {
-        titre: "Coppelis — accompagner le remplacement d'un processus entièrement humain",
-        acs: ["AC36.03"],
-        contexte: "Alternance Cloud Inspire — conduite du changement",
-        type: "Expérience professionnelle",
-        stack: ["Conduite du changement", "Règle métier", "Transfert humain"],
-        analyse:
-          "Automatiser deux cent cinquante appels quotidiens, ce n'est pas un problème technique, c'est un changement qui touche des personnes : les opérateurs dont c'est le poste, et les techniciens qui dépendent de la réponse pour entrer sur un site. La règle qui structure tout le projet vient de là, et je l'ai posée avant d'écrire le code : l'agent ne refuse jamais un accès sur un doute, toute situation incertaine part vers un opérateur humain. Elle repose sur une asymétrie de coût que je trouve éclairante — un refus erroné immobilise un technicien devant un site où il avait le droit d'entrer, un transfert ne coûte qu'une minute de temps humain. Concevoir le système pour privilégier délibérément la seconde erreur, c'est accepter d'être moins performant sur le papier pour être adopté dans les faits. Sur Mika, la même logique m'a fait afficher un indice de confiance avec un code couleur et rendre chaque champ corrigeable : on ne demande pas à un commercial de faire confiance aveuglément à un modèle, on lui donne les moyens de le contredire.",
-        preuves: [{ label: "Étude de cas complète", url: "/realisations/coppelis" }],
-      },
-      {
-        titre: "SNCF Voyageurs — travailler dans une équipe constituée",
-        acs: ["AC36.04"],
-        contexte: "Alternance de 2ᵉ année — développement fullstack",
-        type: "Expérience professionnelle",
-        stack: ["Git", "Revues de code", "Organisation d'équipe"],
-        analyse:
-          "C'est ma trace la plus directe sur le volet collectif, et je l'assume comme telle : cette année chez Cloud Inspire je travaille seul, c'est en deuxième année que j'ai appris à m'insérer dans une équipe. J'y ai découvert ce que Git veut dire quand plusieurs personnes touchent au même code — branches, intégration, revues — et surtout qu'une contribution n'est pas terminée quand elle fonctionne, mais quand quelqu'un d'autre l'a comprise et acceptée. Ce que j'en retiens aujourd'hui structure ma manière de documenter : j'écris pour la personne qui reprendra le projet après moi, parce que j'ai été cette personne.",
-        preuves: [{ label: "Rapport d'activité 2024-2025", url: null }],
-      },
-      {
-        titre: "Plateforme souveraine — conduire une migration pour un client institutionnel",
-        acs: ["AC36.03", "AC36.04"],
-        contexte: "Alternance Cloud Inspire — gouvernance et conduite du changement",
-        type: "Expérience professionnelle",
-        stack: ["Plan de travail", "Comité de pilotage", "KPIs", "Runbooks"],
-        analyse:
-          "Le client est une agence nationale de cybersécurité : chaque décision technique devait être présentée, justifiée et validée par un comité de pilotage. J'ai contribué au plan de travail qui cadre la mission — gouvernance, phasage, indicateurs, plan de bascule DNS, continuité et retour arrière — un document écrit pour des décideurs, pas pour des développeurs. La philosophie « pas de big-bang » n'est pas un choix technique mais un choix de conduite du changement : le site d'abord, la messagerie ensuite, parce qu'une boîte mail indisponible se voit immédiatement et détruit la confiance avant même que la plateforme ait pu faire ses preuves. Les runbooks d'exploitation jouent le même rôle que ma documentation de fond sur les autres projets : permettre à quelqu'un d'autre de faire fonctionner la plateforme sans moi.",
-        preuves: [{ label: "Plan de travail de la mission (confidentiel)", url: null }],
-      },
-      {
         titre: "Une veille technique organisée et réinvestie dans les produits",
-        acs: ["AC36.01"],
         contexte: "Alternance Cloud Inspire — démarche continue",
         type: "Veille",
-        stack: ["Modèles hébergeables", "LiveKit", "STT / TTS", "Files de messages"],
-        analyse:
-          "Ma veille n'est pas un flux que je consomme, c'est une réponse à des questions que le produit me pose. Choisir un modèle d'IA hébergeable engageait la promesse de souveraineté de l'entreprise ; comparer les solutions de communication temps réel a décidé de l'architecture de Coppelis ; suivre les fournisseurs de synthèse vocale m'a permis de basculer quand l'un d'eux s'est révélé inutilisable. Le partage, lui, prend la forme d'une documentation de fond systématique : chaque projet a un document qui répond à « comment ça marche ? » sans ouvrir le code, avec le raisonnement derrière chaque décision et pas seulement son résultat. Ma piste assumée : ce partage est aujourd'hui écrit et passif ; il gagnerait à devenir une synthèse régulière et active auprès de l'équipe.",
+        acs: ["AC36.01"],
+        stack: ["Modèles hébergeables", "LiveKit", "STT / TTS"],
+        points: [
+          "Une veille organisée par les questions que le produit pose : modèles hébergeables, communication temps réel, synthèse vocale",
+          "Réinvestie directement : elle a décidé de l'architecture de l'agent vocal et permis de changer de fournisseur quand l'un a fait défaut",
+          "Partagée par une documentation de fond systématique : le raisonnement derrière chaque décision, pas seulement son résultat",
+        ],
         preuves: [{ label: "Documentations techniques des projets", url: null }],
       },
       {
         titre: "Souveraineté, conformité et enjeux économiques du numérique",
-        acs: ["AC36.02"],
         contexte: "Alternance Cloud Inspire et ressources de 3ᵉ année",
         type: "Compétence transverse",
-        stack: ["RGPD", "NIS2 / DORA", "Open source", "Droit du numérique"],
-        analyse:
-          "Travailler dans une entreprise dont le positionnement est la souveraineté numérique m'a obligé à comprendre l'économie qui l'entoure. L'enfermement propriétaire n'est pas un argument commercial abstrait : c'est ce qui fait qu'une entreprise ne peut plus changer de fournisseur sans réécrire ses applications, et c'est pourquoi je ne fige jamais dans le code une dépendance à un service extérieur. Le durcissement réglementaire européen — NIS2, DORA — déplace une exigence longtemps réservée aux grands comptes vers des entreprises qui n'ont pas de DSI pour y répondre : c'est exactement le segment de mon entreprise. Sur le plan juridique, j'ai travaillé avec la déléguée à la protection des données sur les traitements de données personnelles, ce qui a directement produit la pseudonymisation des jeux de données du POC. Les ressources Droit du numérique et Entrepreneuriat de cette année m'ont donné le vocabulaire de ce que je pratiquais déjà.",
+        acs: ["AC36.02"],
+        stack: ["RGPD", "NIS2 / DORA", "Open source"],
+        points: [
+          "Les enjeux économiques vécus de l'intérieur : l'enfermement propriétaire est ce qui empêche un client de changer de fournisseur",
+          "Le durcissement réglementaire européen (NIS2, DORA) compris comme le marché même de mon entreprise",
+          "Travail avec la déléguée à la protection des données — la pseudonymisation des jeux de données du POC en est le résultat concret",
+        ],
         preuves: [{ label: "Rapport d'activité 2025-2026", url: null }],
       },
       {
-        titre: "Accompagner la conduite d'un projet face au client",
-        acs: ["AC36.04"],
-        contexte: "Alternance Cloud Inspire — relation client et arbitrage",
+        titre: "Plateforme souveraine — conduire une migration pour un client institutionnel",
+        contexte: "Alternance Cloud Inspire — gouvernance et conduite du changement",
         type: "Expérience professionnelle",
-        stack: ["Recueil du besoin", "Arbitrage de priorités", "Communication non technique"],
-        analyse:
-          "Mon poste me place entre le besoin exprimé par un client et sa réalisation : les demandes me viennent de mon maître d'apprentissage après ses échanges commerciaux, et je dois les traduire en solution réalisable en identifiant les contraintes et les points à clarifier. J'ai appris deux choses que je ne soupçonnais pas. La première est que les blocages viennent bien plus souvent des dépendances extérieures — qualité des données transmises, disponibilité d'un service tiers, évolution d'un outil — que des difficultés de programmation. La seconde est qu'expliquer à un interlocuteur non informaticien pourquoi sa demande ne peut pas être satisfaite telle qu'elle est formulée est un exercice bien plus délicat que de l'exécuter, et bien plus utile. Sur le plan de l'organisation, je travaille sur un seul projet à la fois avec des points réguliers d'arbitrage — un choix pris après avoir constaté que le morcellement me coûtait plus que le changement de contexte.",
-        preuves: [{ label: "Rapport d'activité 2025-2026", url: null }],
+        acs: ["AC36.03", "AC36.04"],
+        stack: ["Plan de travail", "Comité de pilotage", "Runbooks"],
+        points: [
+          "Chaque décision technique présentée et validée en comité de pilotage, dans un plan de travail écrit pour des décideurs",
+          "Une migration conduite sans big-bang — le site d'abord, la messagerie ensuite — parce que la confiance se perd plus vite qu'elle ne se gagne",
+          "Des runbooks d'exploitation pour que d'autres fassent fonctionner la plateforme sans moi",
+        ],
+        preuves: [{ label: "Plan de travail de la mission (confidentiel)", url: null }],
       },
     ],
     bilan:
