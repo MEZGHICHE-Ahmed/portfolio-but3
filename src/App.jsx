@@ -1,12 +1,12 @@
 import { useEffect } from 'react'
-import { Routes, Route, useLocation } from 'react-router-dom'
+import { Routes, Route, Navigate, useLocation } from 'react-router-dom'
 import { Header, Footer } from './components/Chrome'
 import Home from './pages/Home'
 import Competences from './pages/Competences'
 import CompetenceDetail from './pages/CompetenceDetail'
 import Realisations from './pages/Realisations'
 import Mika from './pages/Mika'
-import Coppelis from './pages/Coppelis'
+import AgentVocal from './pages/AgentVocal'
 import Parcours from './pages/Parcours'
 import Profil from './pages/Profil'
 import NotFound from './pages/NotFound'
@@ -35,7 +35,9 @@ export default function App() {
           <Route path="/competences/:slug" element={<CompetenceDetail />} />
           <Route path="/realisations" element={<Realisations />} />
           <Route path="/realisations/mika" element={<Mika />} />
-          <Route path="/realisations/coppelis" element={<Coppelis />} />
+          <Route path="/realisations/agent-vocal" element={<AgentVocal />} />
+          {/* Ancienne adresse de l'étude de cas : on redirige sans exposer le nom. */}
+          <Route path="/realisations/coppelis" element={<Navigate to="/realisations/agent-vocal" replace />} />
           <Route path="/parcours" element={<Parcours />} />
           <Route path="/profil" element={<Profil />} />
           <Route path="*" element={<NotFound />} />

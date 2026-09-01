@@ -242,9 +242,9 @@ export default function CompetenceDetail() {
                 action="Voir le projet"
               />
               <Renvoi
-                to="/realisations/coppelis"
+                to="/realisations/agent-vocal"
                 code="Projet"
-                titre="Agent vocal Coppelis"
+                titre="Agent vocal téléphonique"
                 texte="Un agent téléphonique qui décide de l’accès à des sites industriels."
                 action="Voir le projet"
               />

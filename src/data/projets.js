@@ -30,9 +30,9 @@ export const projets = [
     lien: null,
   },
   {
-    id: "coppelis",
+    id: "agent-vocal",
     type: "pro",
-    titre: "Agent vocal Coppelis",
+    titre: "Agent vocal téléphonique",
     sousTitre: "Cloud Inspire — contrôle d'accès de sites industriels",
     categorie: "Alternance · 3ᵉ année",
     periode: "2026",
@@ -49,7 +49,7 @@ export const projets = [
     ],
     stack: ["Python", "LiveKit", "PostgreSQL", "STT / LLM / TTS", "Similarité de chaînes"],
     competences: ["c1", "c2", "c6"],
-    etudeDeCas: "/realisations/coppelis",
+    etudeDeCas: "/realisations/agent-vocal",
     lien: null,
   },
   {

@@ -73,14 +73,14 @@ const COMPETENCES = [
   },
 ]
 
-export default function Coppelis() {
+export default function AgentVocal() {
   return (
     <article className="sheet pb-8">
       <EnTete
-        ariane={[['Accueil', '/'], ['Réalisations', '/realisations'], ['Agent vocal Coppelis', null]]}
+        ariane={[['Accueil', '/'], ['Réalisations', '/realisations'], ['Agent vocal téléphonique', null]]}
         accent="var(--color-c2)"
         kicker="Étude de cas — Alternance Cloud Inspire"
-        titre="L’agent vocal Coppelis"
+        titre="L’agent vocal téléphonique"
         lead="Un programme qui répond au téléphone, comprend son interlocuteur et décide d’autoriser ou non l’accès à un site industriel — à la place d’un opérateur qui traite le même appel deux cent cinquante fois par jour."
         meta={[
           ['Période', '2026'],
@@ -244,7 +244,7 @@ export default function Coppelis() {
       <Figure
         n="2"
         legende="L’interface de supervision : chaque appel y laisse une trace horodatée — informations extraites, décision prise et son motif."
-        attendu="Capture de l’interface de supervision de Coppelis — liste des appels traités avec leur décision et le journal d’un appel."
+        attendu="Capture de l’interface de supervision de l'agent — liste des appels traités avec leur décision et le journal d’un appel."
       />
 
       <Section id="donnees" n="7 / 08" titre="Prouver une anonymisation">
