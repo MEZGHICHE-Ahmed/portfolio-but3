@@ -73,7 +73,7 @@ export default function Home() {
                   ['Poste actuel', actuelle ? `${actuelle.titre.replace(' — Alternance', '')} · ${actuelle.lieu}` : '—'],
                   ['Formation', 'BUT Informatique — parcours A'],
                   ['Localisation', profil.localisation],
-                  ['Objectif', 'Master Cloud, Réseaux & Cybersécurité'],
+                  ['Poursuite', 'Cycle ingénieur — Télécom SudParis'],
                 ].map(([k, v]) => (
                   <div key={k} className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
                     <dt className="code text-fg-3">{k}</dt>

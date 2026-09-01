@@ -37,9 +37,9 @@ export const competences = [
     ],
     // Apprentissages critiques — niveau 3, parcours A (référentiel V34A)
     apprentissages: [
-      "Choisir et implémenter les architectures adaptées",
-      "Faire évoluer une application existante",
-      "Intégrer des solutions dans un environnement de production",
+      { code: "AC31.01", texte: "Choisir et implémenter les architectures adaptées" },
+      { code: "AC31.02", texte: "Faire évoluer une application existante" },
+      { code: "AC31.03", texte: "Intégrer des solutions dans un environnement de production" },
     ],
     // Composantes essentielles — le cadre dans lequel la compétence s'exerce
     composantes: [
@@ -51,6 +51,7 @@ export const competences = [
     traces: [
       {
         titre: "Mika — une architecture mobile + web + serveur, en production",
+        acs: ["AC31.01", "AC31.03"],
         contexte: "Alternance Cloud Inspire — plateforme commerciale augmentée par l'IA",
         type: "Expérience professionnelle",
         stack: ["FastAPI", "Vue.js", "React Native / Expo", "PostgreSQL", "Prisma", "MinIO", "Faktory", "Ollama", "Zitadel"],
@@ -60,6 +61,7 @@ export const competences = [
       },
       {
         titre: "Coppelis — rendre l'agent indépendant du canal d'appel",
+        acs: ["AC31.01"],
         contexte: "Alternance Cloud Inspire — POC d'agent vocal téléphonique",
         type: "Expérience professionnelle",
         stack: ["LiveKit", "Python", "PostgreSQL", "STT / LLM / TTS"],
@@ -69,6 +71,7 @@ export const competences = [
       },
       {
         titre: "Gateway IAM — s'insérer dans une chaîne existante",
+        acs: ["AC31.01", "AC31.02"],
         contexte: "SAÉ de 3ᵉ année — provisionnement d'identités",
         type: "Projet universitaire",
         stack: ["FastAPI", "RabbitMQ", "Prisma", "Ansible", "Docker", "GitHub Actions", "MidPoint"],
@@ -78,6 +81,7 @@ export const competences = [
       },
       {
         titre: "SNCF Voyageurs — faire évoluer une application existante en équipe",
+        acs: ["AC31.02"],
         contexte: "Alternance de 2ᵉ année — développement fullstack",
         type: "Expérience professionnelle",
         stack: ["Développement fullstack", "Git", "Applications internes"],
@@ -87,6 +91,7 @@ export const competences = [
       },
       {
         titre: "Plateforme souveraine — intégrer et exploiter une infrastructure complète",
+        acs: ["AC31.03"],
         contexte: "Alternance Cloud Inspire — hébergement pour une agence nationale de cybersécurité",
         type: "Expérience professionnelle",
         stack: ["Docker Compose", "Caddy + WAF", "CrowdSec", "GitLab CI", "Harbor", "Grafana + Loki", "Restic"],
@@ -129,9 +134,9 @@ export const competences = [
       "Mettre en place des applications adaptées et innovantes",
     ],
     apprentissages: [
-      "Anticiper les résultats de diverses métriques (temps d'exécution, occupation mémoire…)",
-      "Profiler, analyser et justifier le comportement d'un code existant",
-      "Choisir et utiliser des bibliothèques et méthodes dédiées au domaine d'application (imagerie, immersion, intelligence artificielle, jeux vidéo, parallélisme, calcul formel…)",
+      { code: "AC32.01", texte: "Anticiper les résultats de diverses métriques (temps d'exécution, occupation mémoire…)" },
+      { code: "AC32.02", texte: "Profiler, analyser et justifier le comportement d'un code existant" },
+      { code: "AC32.03", texte: "Choisir et utiliser des bibliothèques et méthodes dédiées au domaine d'application (imagerie, immersion, intelligence artificielle, jeux vidéo, parallélisme, calcul formel…)" },
     ],
     composantes: [
       "En formalisant et modélisant des situations complexes",
@@ -142,6 +147,7 @@ export const competences = [
     traces: [
       {
         titre: "Coppelis — reconnaître un nom mal transcrit : trois méthodes, une seule qui tient",
+        acs: ["AC32.02", "AC32.03"],
         contexte: "Alternance Cloud Inspire — agent vocal, recherche floue de noms",
         type: "Expérience professionnelle",
         stack: ["Python", "Similarité de chaînes", "Calibration sur données réelles"],
@@ -151,6 +157,7 @@ export const competences = [
       },
       {
         titre: "Coppelis — choisir une voix par la mesure, et prévoir sa panne",
+        acs: ["AC32.02", "AC32.03"],
         contexte: "Alternance Cloud Inspire — synthèse vocale",
         type: "Expérience professionnelle",
         stack: ["TTS", "Bancs d'écoute", "Mécanisme de secours"],
@@ -160,6 +167,7 @@ export const competences = [
       },
       {
         titre: "Mika — anticiper la latence perçue plutôt que la subir",
+        acs: ["AC32.01"],
         contexte: "Alternance Cloud Inspire — traitement asynchrone",
         type: "Expérience professionnelle",
         stack: ["Faktory", "FastAPI", "Traitement asynchrone", "Reprise sur échec"],
@@ -169,6 +177,7 @@ export const competences = [
       },
       {
         titre: "Coppelis — attribuer un numéro unique sous appels concurrents",
+        acs: ["AC32.01", "AC32.02"],
         contexte: "Alternance Cloud Inspire — concurrence et intégrité",
         type: "Expérience professionnelle",
         stack: ["PostgreSQL", "Verrous de ligne", "Transactions"],
@@ -178,6 +187,7 @@ export const competences = [
       },
       {
         titre: "Vérifier une anonymisation par un second programme indépendant",
+        acs: ["AC32.02"],
         contexte: "Alternance Cloud Inspire — protection des données personnelles",
         type: "Expérience professionnelle",
         stack: ["Python", "Pseudonymisation", "Vérification croisée"],
@@ -187,6 +197,7 @@ export const competences = [
       },
       {
         titre: "Audiodescription — réduire le coût d'un pipeline de modèles lourds",
+        acs: ["AC32.01", "AC32.03"],
         contexte: "Alternance Cloud Inspire — transcription et audiodescription pour l'audiovisuel",
         type: "Expérience professionnelle",
         stack: ["Celery", "Whisper", "Modèles de vision", "Détection de scènes", "Parallélisme"],
@@ -229,10 +240,10 @@ export const competences = [
       "Élaborer, gérer et transmettre de l'information",
     ],
     apprentissages: [
-      "Organiser et partager une veille numérique",
-      "Identifier les enjeux de l'économie de l'innovation numérique",
-      "Guider la conduite du changement informatique au sein d'une organisation",
-      "Accompagner le management de projet informatique",
+      { code: "AC36.01", texte: "Organiser et partager une veille numérique" },
+      { code: "AC36.02", texte: "Identifier les enjeux de l'économie de l'innovation numérique" },
+      { code: "AC36.03", texte: "Guider la conduite du changement informatique au sein d'une organisation" },
+      { code: "AC36.04", texte: "Accompagner le management de projet informatique" },
     ],
     composantes: [
       "En inscrivant sa démarche au sein d'une équipe pluridisciplinaire",
@@ -247,6 +258,7 @@ export const competences = [
     traces: [
       {
         titre: "Coppelis — accompagner le remplacement d'un processus entièrement humain",
+        acs: ["AC36.03"],
         contexte: "Alternance Cloud Inspire — conduite du changement",
         type: "Expérience professionnelle",
         stack: ["Conduite du changement", "Règle métier", "Transfert humain"],
@@ -256,6 +268,7 @@ export const competences = [
       },
       {
         titre: "SNCF Voyageurs — travailler dans une équipe constituée",
+        acs: ["AC36.04"],
         contexte: "Alternance de 2ᵉ année — développement fullstack",
         type: "Expérience professionnelle",
         stack: ["Git", "Revues de code", "Organisation d'équipe"],
@@ -265,6 +278,7 @@ export const competences = [
       },
       {
         titre: "Plateforme souveraine — conduire une migration pour un client institutionnel",
+        acs: ["AC36.03", "AC36.04"],
         contexte: "Alternance Cloud Inspire — gouvernance et conduite du changement",
         type: "Expérience professionnelle",
         stack: ["Plan de travail", "Comité de pilotage", "KPIs", "Runbooks"],
@@ -274,6 +288,7 @@ export const competences = [
       },
       {
         titre: "Une veille technique organisée et réinvestie dans les produits",
+        acs: ["AC36.01"],
         contexte: "Alternance Cloud Inspire — démarche continue",
         type: "Veille",
         stack: ["Modèles hébergeables", "LiveKit", "STT / TTS", "Files de messages"],
@@ -283,6 +298,7 @@ export const competences = [
       },
       {
         titre: "Souveraineté, conformité et enjeux économiques du numérique",
+        acs: ["AC36.02"],
         contexte: "Alternance Cloud Inspire et ressources de 3ᵉ année",
         type: "Compétence transverse",
         stack: ["RGPD", "NIS2 / DORA", "Open source", "Droit du numérique"],
@@ -292,6 +308,7 @@ export const competences = [
       },
       {
         titre: "Accompagner la conduite d'un projet face au client",
+        acs: ["AC36.04"],
         contexte: "Alternance Cloud Inspire — relation client et arbitrage",
         type: "Expérience professionnelle",
         stack: ["Recueil du besoin", "Arbitrage de priorités", "Communication non technique"],
