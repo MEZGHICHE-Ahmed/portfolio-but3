@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 import { competences, toutesLesCompetences, competencesNiveau2 } from '../data/competences'
-import { PageHead, Enter, SectionTitle, Indexed } from '../components/Primitives'
+import { PageHead, Enter, SectionTitle } from '../components/Primitives'
 
 const COULEUR = { c1: 'var(--color-c1)', c2: 'var(--color-c2)', c6: 'var(--color-c6)' }
 
@@ -61,12 +61,15 @@ export default function Competences() {
                 <h3 className="mt-5 text-[1.3rem] font-bold leading-snug">{c.titre}</h3>
                 <p className="mt-3 text-[0.95rem] leading-relaxed text-fg-2">{c.tagline}</p>
 
-                <ul className="mt-6 space-y-2.5 border-t border-line pt-5">
-                  {c.apprentissages.map((a, j) => (
-                    <li key={a}>
-                      <Indexed n={`0${j + 1}`} accent={COULEUR[c.id]}>
-                        <span className="text-[0.88rem] leading-snug text-fg-2">{a}</span>
-                      </Indexed>
+                <ul className="mt-6 space-y-3 border-t border-line pt-5">
+                  {c.apprentissages.map((a) => (
+                    <li key={a.code}>
+                      <span className="code font-semibold" style={{ color: COULEUR[c.id] }}>
+                        {a.code}
+                      </span>
+                      <span className="mt-0.5 block text-[0.88rem] leading-snug text-fg-2">
+                        {a.texte}
+                      </span>
                     </li>
                   ))}
                 </ul>

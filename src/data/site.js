@@ -20,7 +20,7 @@ export const profil = {
     "Ce que cette autonomie m'a appris tient en deux convictions. La première : on n'accorde jamais à un modèle d'intelligence artificielle une confiance qu'il ne mérite pas — on expose son degré de certitude à l'utilisateur et on lui donne les moyens de corriger. La seconde : un programme qui affirme avoir anonymisé des données ne constitue pas une preuve ; seule une vérification indépendante, menée selon une autre logique, apporte cette garantie. Ce site est la démonstration, traces à l'appui, du niveau Confirmé sur les trois compétences terminales de mon parcours.",
   ],
   objectif:
-    "Poursuivre en Master Informatique — parcours Réseaux, Cybersécurité, Cloud et Automatisation — en alternance, pour approfondir la sécurité applicative et les architectures distribuées.",
+    "Poursuivre en cycle d'ingénieur à Télécom SudParis, pour approfondir les réseaux, le cloud et la cybersécurité à l'échelle des systèmes distribués.",
 };
 
 export const contact = {
