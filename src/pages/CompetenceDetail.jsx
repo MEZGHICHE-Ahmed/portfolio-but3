@@ -199,7 +199,7 @@ export default function CompetenceDetail() {
 
           {/* ---------- Bilan ---------- */}
           <section id="bilan" className="mt-20 scroll-mt-28">
-            <SectionTitle eyebrow="Bilan" title="Où j’en suis, et ce qui me reste" />
+            <SectionTitle eyebrow="Bilan" title="Où j’en suis, et la suite" />
 
             <div className="mt-10 grid gap-6 lg:grid-cols-2">
               <div className="card p-7">
