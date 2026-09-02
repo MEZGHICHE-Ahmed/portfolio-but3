@@ -138,7 +138,7 @@ export function Footer() {
         <div>
           <p className="text-[1.15rem] font-bold">{profil.nomComplet}</p>
           <p className="mt-2 text-[0.95rem] leading-relaxed text-fg-2">
-            Portfolio de fin de BUT Informatique — parcours A
+            Portfolio de fin de BUT Informatique
             <br />
             IUT de Créteil-Vitry · 2023–2026
           </p>

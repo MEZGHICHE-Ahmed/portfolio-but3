@@ -50,25 +50,25 @@ const VOIX = [
 
 const COMPETENCES = [
   {
-    code: 'C2', titre: 'Optimiser des applications', slug: 'optimiser-des-applications',
+    id: 'c2', titre: 'Optimiser des applications', slug: 'optimiser-des-applications',
     points: [
-      'AC2 — Profiler, analyser et justifier : seuil de recherche floue calibré sur des appels réels, voix tranchée par l’écoute plutôt que par la documentation.',
-      'AC3 — Méthodes dédiées au domaine : similarité de chaînes multi-angles, verrouillage de ligne, transactions.',
-      'AC1 — Anticiper les métriques : contraintes de latence d’un dialogue temps réel, prototype à modèle audio unique mesuré.',
+      'Profiler, analyser et justifier : seuil de recherche floue calibré sur des appels réels, voix tranchée par l’écoute plutôt que par la documentation.',
+      'Méthodes dédiées au domaine : similarité de chaînes multi-angles, verrouillage de ligne, transactions.',
+      'Anticiper les métriques : contraintes de latence d’un dialogue temps réel, prototype à modèle audio unique mesuré.',
     ],
   },
   {
-    code: 'C1', titre: 'Réaliser un développement d’application', slug: 'developper-une-application',
+    id: 'c1', titre: 'Réaliser un développement d’application', slug: 'developper-une-application',
     points: [
-      'AC1 — Choisir et implémenter les architectures adaptées : indépendance au canal d’appel, décidée dès la conception et non subie.',
-      'AC3 — Intégrer dans un environnement de production : déploiement sur serveur exposé, journalisation intégrale des appels.',
+      'Choisir et implémenter les architectures adaptées : indépendance au canal d’appel, décidée dès la conception et non subie.',
+      'Intégrer dans un environnement de production : déploiement sur serveur exposé, journalisation intégrale des appels.',
     ],
   },
   {
-    code: 'C6', titre: 'Collaborer au sein d’une équipe informatique', slug: 'collaborer-manager',
+    id: 'c6', titre: 'Collaborer au sein d’une équipe informatique', slug: 'collaborer-manager',
     points: [
-      'AC3 — Guider la conduite du changement : remplacer un processus entièrement humain, avec le transfert vers un opérateur comme filet.',
-      'CE3 — Respect des contraintes juridiques : pseudonymisation des données personnelles du référentiel, vérifiée indépendamment.',
+      'Guider la conduite du changement : remplacer un processus entièrement humain, avec le transfert vers un opérateur comme filet.',
+      'Respect des contraintes juridiques : pseudonymisation des données personnelles du référentiel, vérifiée indépendamment.',
     ],
   },
 ]
@@ -86,7 +86,7 @@ export default function AgentVocal() {
           ['Période', '2026'],
           ['Nature', 'Preuve de concept, éprouvée sur appels réels'],
           ['Client final', 'Secteur énergie et infrastructures'],
-          ['Compétences', 'C2 · C1 · C6'],
+          ['Compétences', 'Optimisation · Développement · Travail en équipe'],
         ]}
       />
 
@@ -275,7 +275,7 @@ export default function AgentVocal() {
         liens={[
           {
             to: '/competences/optimiser-des-applications',
-            code: 'Compétence C2',
+            code: 'Compétence',
             titre: 'Optimiser des applications',
             texte: 'La compétence que cette étude porte principalement, avec ses autres traces.',
             action: 'Lire la compétence',

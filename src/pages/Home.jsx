@@ -71,7 +71,7 @@ export default function Home() {
               <dl className="mt-7 space-y-4 border-t border-line pt-6">
                 {[
                   ['Poste actuel', actuelle ? `${actuelle.titre.replace(' — Alternance', '')} · ${actuelle.lieu}` : '—'],
-                  ['Formation', 'BUT Informatique — parcours A'],
+                  ['Formation', 'BUT Informatique — Réalisation d’applications'],
                   ['Localisation', profil.localisation],
                   ['Poursuite', 'Cycle ingénieur — Télécom SudParis'],
                 ].map(([k, v]) => (
@@ -228,7 +228,7 @@ export default function Home() {
                 style={{ borderTop: `3px solid ${COULEUR[c.id]}` }}
               >
                 <p className="code font-semibold" style={{ color: COULEUR[c.id] }}>
-                  {c.code} · Niveau {c.niveauNum}
+                  Niveau {c.niveauNum} sur 3
                 </p>
                 <h3 className="mt-3 text-[1.2rem] font-bold leading-snug">{c.titre}</h3>
                 <p className="mt-3 flex-1 text-[0.95rem] leading-relaxed text-fg-2">{c.tagline}</p>

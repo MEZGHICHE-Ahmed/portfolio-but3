@@ -29,7 +29,7 @@ export default function Competences() {
         lead="Le BUT Informatique s’articule autour de six compétences, développées sur trois ans. Dans mon parcours, trois d’entre elles sont poussées jusqu’au niveau le plus avancé."
         meta={[
           ['Diplôme', 'BUT Informatique'],
-          ['Parcours', 'A — Réalisation d’applications'],
+          ['Spécialité', 'Réalisation d’applications'],
           ['Compétences', '6'],
           ['Au niveau avancé', '3'],
         ]}
@@ -53,7 +53,7 @@ export default function Competences() {
               >
                 <div className="flex items-center justify-between gap-3">
                   <span className="code font-semibold" style={{ color: COULEUR[c.id] }}>
-                    {c.code}
+                    Niveau {c.niveauNum} sur 3
                   </span>
                   <Jauge niveau={c.niveauNum} accent={COULEUR[c.id]} />
                 </div>
@@ -63,13 +63,13 @@ export default function Competences() {
 
                 <ul className="mt-6 space-y-3 border-t border-line pt-5">
                   {c.apprentissages.map((a) => (
-                    <li key={a.code}>
-                      <span className="code font-semibold" style={{ color: COULEUR[c.id] }}>
-                        {a.code}
-                      </span>
-                      <span className="mt-0.5 block text-[0.88rem] leading-snug text-fg-2">
-                        {a.texte}
-                      </span>
+                    <li key={a} className="flex gap-2.5">
+                      <span
+                        aria-hidden
+                        className="mt-[0.55em] size-1.5 shrink-0 rounded-full"
+                        style={{ background: COULEUR[c.id] }}
+                      />
+                      <span className="text-[0.88rem] leading-snug text-fg-2">{a}</span>
                     </li>
                   ))}
                 </ul>
@@ -96,12 +96,12 @@ export default function Competences() {
 
         <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {toutesLesCompetences.map((c, i) => {
-            const teinte = c.focus ? COULEUR[`c${c.code.slice(1)}`] : 'var(--color-fg-3)'
+            const teinte = c.focus ? COULEUR[c.id] : 'var(--color-fg-3)'
             const inner = (
               <>
                 <div className="flex items-center justify-between gap-3">
                   <span className="code font-semibold" style={{ color: teinte }}>
-                    {c.code}
+                    Niveau {c.niveauNum} sur 3
                   </span>
                   <Jauge niveau={c.niveauNum} accent={teinte} />
                 </div>
@@ -118,7 +118,7 @@ export default function Competences() {
             )
 
             return (
-              <Enter key={c.code} delay={(i % 3) * 0.05}>
+              <Enter key={c.titre} delay={(i % 3) * 0.05}>
                 {c.focus ? (
                   <Link to={`/competences/${c.slug}`} className="card-link flex h-full flex-col p-6">
                     {inner}
@@ -142,10 +142,9 @@ export default function Competences() {
 
         <div className="mt-10 grid gap-5 lg:grid-cols-3">
           {competencesNiveau2.map((c, i) => (
-            <Enter key={c.code} delay={i * 0.06}>
+            <Enter key={c.titre} delay={i * 0.06}>
               <article className="card flex h-full flex-col p-6">
-                <span className="code text-fg-3">{c.code}</span>
-                <h3 className="mt-3 text-[1.05rem] font-bold leading-snug">{c.titre}</h3>
+                <h3 className="text-[1.05rem] font-bold leading-snug">{c.titre}</h3>
                 <p className="mt-3 flex-1 text-[0.92rem] leading-relaxed text-fg-2">
                   {c.reinvesti}
                 </p>

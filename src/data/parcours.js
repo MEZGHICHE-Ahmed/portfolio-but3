@@ -8,7 +8,7 @@ export const formation = [
     titre: "BUT Informatique — parcours Réalisation d'applications",
     lieu: "IUT de Créteil-Vitry",
     description:
-      "Parcours A : conception, développement, validation. Architecture logicielle, développement multi-supports, qualité et optimisation, bases de données, virtualisation et automatisation.",
+      "Spécialité conception, développement et validation d'applications. Architecture logicielle, développement multi-supports, qualité et optimisation, bases de données, virtualisation et automatisation.",
     actuel: true,
   },
   {
@@ -64,7 +64,7 @@ export const frise = [
       "SAÉ Site Hydrométrie — application web Flask complète",
       "SAÉ Création d'une base de données à partir de données ouvertes",
     ],
-    competences: ["C1", "C2", "C4"],
+    competences: ["Développement", "Algorithmique", "Bases de données"],
   },
   {
     annee: "2ᵉ année",
@@ -78,7 +78,7 @@ export const frise = [
       "Réseaux — maquette d'infrastructure d'entreprise",
       "Alternance SNCF Voyageurs — faire évoluer un existant en équipe",
     ],
-    competences: ["C1", "C2", "C3", "C5", "C6"],
+    competences: ["Développement", "Optimisation", "Systèmes & réseaux", "Gestion de projet", "Travail en équipe"],
   },
   {
     annee: "3ᵉ année",
@@ -93,6 +93,6 @@ export const frise = [
       "Maintenance applicative — faire vivre une application livrée",
       "Alternance Cloud Inspire — deux produits conçus et mis en service",
     ],
-    competences: ["C1", "C2", "C6"],
+    competences: ["Développement", "Optimisation", "Travail en équipe"],
   },
 ];

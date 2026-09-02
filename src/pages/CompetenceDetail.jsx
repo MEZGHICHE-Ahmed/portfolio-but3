@@ -25,14 +25,14 @@ export default function CompetenceDetail() {
   return (
     <article className="sheet pb-8">
       <PageHead
-        ariane={[['Accueil', '/'], ['Compétences', '/competences'], [c.code, null]]}
-        kicker={`${c.code} · Niveau ${c.niveauNum} sur 3`}
+        ariane={[['Accueil', '/'], ['Compétences', '/competences'], [c.titre, null]]}
+        kicker={`Niveau ${c.niveauNum} sur 3 · ${c.niveau}`}
         title={c.titre}
         lead={c.tagline}
         accent={accent}
         meta={[
           ['Intitulé officiel', c.titreOfficiel],
-          ['Apprentissages critiques', String(c.apprentissages.length)],
+          ['Savoir-faire visés', String(c.apprentissages.length)],
           ['Projets associés', String(c.traces.length)],
           ['Niveau atteint', `${c.niveauNum} · ${c.niveau}`],
         ]}
@@ -60,16 +60,19 @@ export default function CompetenceDetail() {
 
             <div className="mt-10 grid gap-6 lg:grid-cols-2">
               <div className="card p-6">
-                <h3 className="text-[1.02rem] font-bold">Les apprentissages critiques</h3>
+                <h3 className="text-[1.02rem] font-bold">Les savoir-faire visés</h3>
                 <p className="mt-2 text-[0.85rem] leading-relaxed text-fg-3">
-                  Les attendus officiels du référentiel national au niveau 3. Chaque projet
-                  ci-dessous précise ceux qu'il démontre.
+                  Ce que la dernière année attend sur cette compétence.
                 </p>
                 <ol className="mt-5 space-y-4">
                   {c.apprentissages.map((a) => (
-                    <li key={a.code}>
-                      <p className="code font-semibold" style={{ color: accent }}>{a.code}</p>
-                      <p className="mt-1 text-[0.95rem] leading-relaxed text-fg-2">{a.texte}</p>
+                    <li key={a} className="flex gap-3">
+                      <span
+                        aria-hidden
+                        className="mt-[0.6em] size-1.5 shrink-0 rounded-full"
+                        style={{ background: accent }}
+                      />
+                      <p className="text-[0.95rem] leading-relaxed text-fg-2">{a}</p>
                     </li>
                   ))}
                 </ol>
@@ -115,7 +118,7 @@ export default function CompetenceDetail() {
             <SectionTitle
               eyebrow="Mes projets"
               title="Comment je l’ai mise en pratique"
-              lead="Pour chaque projet : ce que j’ai fait, pourquoi j’ai décidé ainsi, ce que j’en retiens — et les apprentissages critiques que la trace démontre."
+              lead="Pour chaque projet : ce que j’ai fait, pourquoi j’ai décidé ainsi, et ce que j’en retiens."
             />
 
             <div className="mt-10 space-y-5">
@@ -130,19 +133,6 @@ export default function CompetenceDetail() {
                         {String(j + 1).padStart(2, '0')}
                       </span>
                       <span className="chip">{t.type}</span>
-                      {t.acs?.map((code) => (
-                        <span
-                          key={code}
-                          className="code rounded-md px-2 py-1 font-semibold"
-                          style={{
-                            background: `color-mix(in srgb, ${accent} 14%, transparent)`,
-                            color: accent,
-                          }}
-                          title="Apprentissage critique démontré par cette trace"
-                        >
-                          {code}
-                        </span>
-                      ))}
                     </div>
 
                     <h3 className="mt-4 text-[1.25rem] font-bold leading-snug">{t.titre}</h3>
@@ -228,7 +218,7 @@ export default function CompetenceDetail() {
             <div className="mt-8 grid gap-5 sm:grid-cols-3">
               <Renvoi
                 to={`/competences/${next.slug}`}
-                code={next.code}
+                code={`Niveau ${next.niveauNum} sur 3`}
                 titre={next.titre}
                 texte={next.tagline}
                 action="Voir la compétence"

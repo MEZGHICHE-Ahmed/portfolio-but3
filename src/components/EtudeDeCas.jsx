@@ -116,7 +116,7 @@ export function Incidents({ items, accent }) {
   )
 }
 
-const COULEUR = { C1: 'var(--color-c1)', C2: 'var(--color-c2)', C6: 'var(--color-c6)' }
+const COULEUR = { c1: 'var(--color-c1)', c2: 'var(--color-c2)', c6: 'var(--color-c6)' }
 
 /** Rattachement aux compétences, en fin d'étude. */
 export function Rattachement({ id, n, competences }) {
@@ -124,16 +124,15 @@ export function Rattachement({ id, n, competences }) {
     <Section id={id} n={n} titre="Les compétences mobilisées">
       <div className="grid gap-5 lg:grid-cols-3">
         {competences.map((c, i) => {
-          const teinte = COULEUR[c.code] || 'var(--color-brand)'
+          const teinte = COULEUR[c.id] || 'var(--color-brand)'
           return (
-            <Enter key={c.code} delay={i * 0.05}>
+            <Enter key={c.titre} delay={i * 0.05}>
               <Link
                 to={`/competences/${c.slug}`}
                 className="card-link group flex h-full flex-col p-6"
                 style={{ borderTop: `3px solid ${teinte}` }}
               >
-                <span className="code font-semibold" style={{ color: teinte }}>{c.code}</span>
-                <h3 className="mt-3 text-[1.05rem] font-bold leading-snug">{c.titre}</h3>
+                <h3 className="text-[1.05rem] font-bold leading-snug">{c.titre}</h3>
                 <ul className="mt-4 flex-1 space-y-2">
                   {c.points.map((p) => (
                     <Puce key={p} accent={teinte}>{p}</Puce>

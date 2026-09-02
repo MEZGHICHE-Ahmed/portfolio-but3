@@ -46,25 +46,25 @@ const INCIDENTS = [
 
 const COMPETENCES = [
   {
-    code: 'C1', titre: 'Réaliser un développement d’application', slug: 'developper-une-application',
+    id: 'c1', titre: 'Réaliser un développement d’application', slug: 'developper-une-application',
     points: [
-      'AC1 — Choisir et implémenter les architectures adaptées : trois supports, et un découpage en services dont chaque frontière répond à une contrainte constatée.',
-      'AC2 — Faire évoluer une application existante : incident du modèle retiré, migration du stockage des images.',
-      'AC3 — Intégrer des solutions dans un environnement de production : mise en service réelle, intégration continue, déploiement automatisé, suivi des incidents.',
+      'Choisir et implémenter les architectures adaptées : trois supports, et un découpage en services dont chaque frontière répond à une contrainte constatée.',
+      'Faire évoluer une application existante : incident du modèle retiré, migration du stockage des images.',
+      'Intégrer des solutions dans un environnement de production : mise en service réelle, intégration continue, déploiement automatisé, suivi des incidents.',
     ],
   },
   {
-    code: 'C2', titre: 'Optimiser des applications', slug: 'optimiser-des-applications',
+    id: 'c2', titre: 'Optimiser des applications', slug: 'optimiser-des-applications',
     points: [
-      'AC1 — Anticiper les résultats de diverses métriques : latence perçue ramenée à zéro par le traitement différé, alors que le temps de calcul est inchangé.',
-      'AC3 — Choisir des bibliothèques et méthodes dédiées au domaine : modèles de vision et de langage, file de travaux, stockage objet.',
+      'Anticiper les résultats de diverses métriques : latence perçue ramenée à zéro par le traitement différé, alors que le temps de calcul est inchangé.',
+      'Choisir des bibliothèques et méthodes dédiées au domaine : modèles de vision et de langage, file de travaux, stockage objet.',
     ],
   },
   {
-    code: 'C6', titre: 'Collaborer au sein d’une équipe informatique', slug: 'collaborer-manager',
+    id: 'c6', titre: 'Collaborer au sein d’une équipe informatique', slug: 'collaborer-manager',
     points: [
-      'AC3 — Guider la conduite du changement : indice de confiance affiché et correction manuelle, pour que l’outil soit adopté plutôt que subi.',
-      'AC2 — Identifier les enjeux de l’économie du numérique : souveraineté des données, indépendance vis-à-vis des fournisseurs de modèles.',
+      'Guider la conduite du changement : indice de confiance affiché et correction manuelle, pour que l’outil soit adopté plutôt que subi.',
+      'Identifier les enjeux de l’économie du numérique : souveraineté des données, indépendance vis-à-vis des fournisseurs de modèles.',
     ],
   },
 ]
@@ -82,7 +82,7 @@ export default function Mika() {
           ['Période', '2025 – 2026'],
           ['État', 'En production'],
           ['Rôle', 'Conception, développement, exploitation'],
-          ['Compétences', 'C1 · C2 · C6'],
+          ['Compétences', 'Développement · Optimisation · Travail en équipe'],
         ]}
       />
 
@@ -236,7 +236,7 @@ export default function Mika() {
           },
           {
             to: '/competences/developper-une-application',
-            code: 'Compétence C1',
+            code: 'Compétence',
             titre: 'Réaliser un développement d’application',
             texte: 'La compétence que cette étude porte principalement, avec ses autres traces.',
             action: 'Lire la compétence',

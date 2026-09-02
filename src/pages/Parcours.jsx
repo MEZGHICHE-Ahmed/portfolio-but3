@@ -62,7 +62,7 @@ export default function Parcours() {
         lead="Trois ans de BUT Informatique, dont deux en alternance : d’abord au sein d’une équipe constituée chez SNCF Voyageurs, puis en autonomie complète chez Cloud Inspire."
         meta={[
           ['Formation', 'BUT Informatique'],
-          ['Parcours', 'A — Réalisation d’applications'],
+          ['Spécialité', 'Réalisation d’applications'],
           ['Établissement', 'IUT de Créteil-Vitry'],
           ['Alternance', '2 ans'],
         ]}

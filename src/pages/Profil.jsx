@@ -11,7 +11,7 @@ export default function Profil() {
         lead={`${profil.titre} — ${profil.sousTitre}`}
         meta={[
           ['Localisation', profil.localisation],
-          ['Formation', 'BUT Informatique — parcours A'],
+          ['Formation', 'BUT Informatique — Réalisation d’applications'],
           ['Alternance', 'Cloud Inspire'],
           ['Courriel', contact.email],
         ]}

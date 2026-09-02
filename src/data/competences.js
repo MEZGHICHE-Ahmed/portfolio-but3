@@ -1,10 +1,10 @@
 // ---------------------------------------------------------------------------
-// COMPÉTENCES — BUT Informatique, parcours A « Réalisation d'applications :
-// conception, développement, validation ». Libellés, niveaux, composantes
-// essentielles et apprentissages critiques repris du référentiel national
-// (ACD Informatique, V34A). En 3ᵉ année, parcours A, trois compétences
-// atteignent le niveau 3 « Confirmé » : C1 Réaliser un développement
-// d'application, C2 Optimiser des applications, C6 Collaborer en équipe.
+// COMPÉTENCES — BUT Informatique, spécialité « Réalisation d'applications :
+// conception, développement, validation ».
+//
+// Trois compétences sont approfondies jusqu'au niveau le plus avancé en
+// dernière année : développer une application, optimiser des applications,
+// collaborer en équipe. Les trois autres s'arrêtent au niveau intermédiaire.
 // ---------------------------------------------------------------------------
 
 const GITHUB = "https://github.com/RedOne777";
@@ -15,7 +15,6 @@ export const competences = [
   // =========================================================================
   {
     id: "c1",
-    code: "C1",
     slug: "developper-une-application",
     color: "#6fa7d4",
     colorClass: "c1",
@@ -35,13 +34,13 @@ export const competences = [
       "Faire évoluer une application informatique",
       "Maintenir en conditions opérationnelles une application",
     ],
-    // Apprentissages critiques — niveau 3, parcours A (référentiel V34A)
+    // Les savoir-faire visés par cette compétence en dernière année.
     apprentissages: [
-      { code: "AC31.01", texte: "Choisir et implémenter les architectures adaptées" },
-      { code: "AC31.02", texte: "Faire évoluer une application existante" },
-      { code: "AC31.03", texte: "Intégrer des solutions dans un environnement de production" },
+      "Choisir et implémenter les architectures adaptées",
+      "Faire évoluer une application existante",
+      "Intégrer des solutions dans un environnement de production",
     ],
-    // Composantes essentielles — le cadre dans lequel la compétence s'exerce
+    // Le cadre dans lequel la compétence s'exerce.
     composantes: [
       "En respectant les besoins décrits par le client",
       "En appliquant les principes algorithmiques",
@@ -53,7 +52,6 @@ export const competences = [
         titre: "Mika — une architecture mobile + web + serveur, en production",
         contexte: "Alternance Cloud Inspire — plateforme commerciale augmentée par l'IA",
         type: "Expérience professionnelle",
-        acs: ["AC31.01", "AC31.03"],
         stack: ["FastAPI", "Vue.js", "React Native / Expo", "PostgreSQL", "Faktory", "MinIO"],
         points: [
           "Une architecture choisie pour ses contraintes : mobile pour les commerciaux en salon, web pour les responsables, serveur pour tous les traitements",
@@ -66,7 +64,6 @@ export const competences = [
         titre: "Gateway IAM — faire évoluer une chaîne de provisionnement",
         contexte: "SAÉ de 3ᵉ année — provisionnement d'identités vers cinq types de cibles",
         type: "Projet universitaire",
-        acs: ["AC31.01", "AC31.02"],
         stack: ["FastAPI", "RabbitMQ", "Ansible", "Docker", "GitHub Actions"],
         points: [
           "Une chaîne asynchrone conçue d'après les contraintes : file de messages, orchestrateur, connecteurs par type de cible",
@@ -79,7 +76,6 @@ export const competences = [
         titre: "Plateforme souveraine — intégrer et exploiter en production",
         contexte: "Alternance Cloud Inspire — hébergement pour une agence nationale de cybersécurité",
         type: "Expérience professionnelle",
-        acs: ["AC31.03"],
         stack: ["Docker Compose", "Caddy + WAF", "GitLab CI", "Grafana + Loki", "Restic"],
         points: [
           "Sept machines virtuelles exploitées pour un client gouvernemental : site, messagerie, forge logicielle, supervision, sauvegardes",
@@ -103,7 +99,6 @@ export const competences = [
   // =========================================================================
   {
     id: "c2",
-    code: "C2",
     slug: "optimiser-des-applications",
     color: "#d2a24c",
     colorClass: "c2",
@@ -123,9 +118,9 @@ export const competences = [
       "Mettre en place des applications adaptées et innovantes",
     ],
     apprentissages: [
-      { code: "AC32.01", texte: "Anticiper les résultats de diverses métriques (temps d'exécution, occupation mémoire…)" },
-      { code: "AC32.02", texte: "Profiler, analyser et justifier le comportement d'un code existant" },
-      { code: "AC32.03", texte: "Choisir et utiliser des bibliothèques et méthodes dédiées au domaine d'application (imagerie, immersion, intelligence artificielle, jeux vidéo, parallélisme, calcul formel…)" },
+      "Anticiper les résultats de diverses métriques (temps d'exécution, occupation mémoire…)",
+      "Profiler, analyser et justifier le comportement d'un code existant",
+      "Choisir et utiliser des bibliothèques et méthodes dédiées au domaine d'application (imagerie, immersion, intelligence artificielle, jeux vidéo, parallélisme, calcul formel…)",
     ],
     composantes: [
       "En formalisant et modélisant des situations complexes",
@@ -138,7 +133,6 @@ export const competences = [
         titre: "Agent vocal — reconnaître un nom mal transcrit",
         contexte: "Alternance Cloud Inspire — agent vocal, recherche floue de noms",
         type: "Expérience professionnelle",
-        acs: ["AC32.02", "AC32.03"],
         stack: ["Python", "Similarité de chaînes", "Calibration sur données réelles"],
         points: [
           "Trois modes d'erreur observés sur des appels réels, trois méthodes essayées : seule la comparaison multi-angles a résisté aux trois",
@@ -151,7 +145,6 @@ export const competences = [
         titre: "Audiodescription — réduire le coût d'un pipeline de modèles lourds",
         contexte: "Alternance Cloud Inspire — transcription et audiodescription pour l'audiovisuel",
         type: "Expérience professionnelle",
-        acs: ["AC32.01", "AC32.03"],
         stack: ["Celery", "Whisper", "Modèles de vision", "Détection de scènes"],
         points: [
           "Coût anticipé avant d'écrire le code : décrire chaque image d'une heure de vidéo était inabordable",
@@ -164,7 +157,6 @@ export const competences = [
         titre: "Mika — anticiper la latence perçue plutôt que la subir",
         contexte: "Alternance Cloud Inspire — traitement asynchrone",
         type: "Expérience professionnelle",
-        acs: ["AC32.01"],
         stack: ["Faktory", "FastAPI", "Traitement asynchrone"],
         points: [
           "Dix à soixante secondes d'analyse par carte : l'attente perçue a été anticipée avant la première ligne de code",
@@ -188,7 +180,6 @@ export const competences = [
   // =========================================================================
   {
     id: "c6",
-    code: "C6",
     slug: "collaborer-manager",
     color: "#63b189",
     colorClass: "c6",
@@ -208,10 +199,10 @@ export const competences = [
       "Élaborer, gérer et transmettre de l'information",
     ],
     apprentissages: [
-      { code: "AC36.01", texte: "Organiser et partager une veille numérique" },
-      { code: "AC36.02", texte: "Identifier les enjeux de l'économie de l'innovation numérique" },
-      { code: "AC36.03", texte: "Guider la conduite du changement informatique au sein d'une organisation" },
-      { code: "AC36.04", texte: "Accompagner le management de projet informatique" },
+      "Organiser et partager une veille numérique",
+      "Identifier les enjeux de l'économie de l'innovation numérique",
+      "Guider la conduite du changement informatique au sein d'une organisation",
+      "Accompagner le management de projet informatique",
     ],
     composantes: [
       "En inscrivant sa démarche au sein d'une équipe pluridisciplinaire",
@@ -228,7 +219,6 @@ export const competences = [
         titre: "Une veille technique organisée et réinvestie dans les produits",
         contexte: "Alternance Cloud Inspire — démarche continue",
         type: "Veille",
-        acs: ["AC36.01"],
         stack: ["Modèles hébergeables", "LiveKit", "STT / TTS"],
         points: [
           "Une veille organisée par les questions que le produit pose : modèles hébergeables, communication temps réel, synthèse vocale",
@@ -241,7 +231,6 @@ export const competences = [
         titre: "Souveraineté, conformité et enjeux économiques du numérique",
         contexte: "Alternance Cloud Inspire et ressources de 3ᵉ année",
         type: "Compétence transverse",
-        acs: ["AC36.02"],
         stack: ["RGPD", "NIS2 / DORA", "Open source"],
         points: [
           "Les enjeux économiques vécus de l'intérieur : l'enfermement propriétaire est ce qui empêche un client de changer de fournisseur",
@@ -254,7 +243,6 @@ export const competences = [
         titre: "Plateforme souveraine — conduire une migration pour un client institutionnel",
         contexte: "Alternance Cloud Inspire — gouvernance et conduite du changement",
         type: "Expérience professionnelle",
-        acs: ["AC36.03", "AC36.04"],
         stack: ["Plan de travail", "Comité de pilotage", "Runbooks"],
         points: [
           "Chaque décision technique présentée et validée en comité de pilotage, dans un plan de travail écrit pour des décideurs",
@@ -278,76 +266,70 @@ export const competences = [
 export const competenceBySlug = (slug) => competences.find((c) => c.slug === slug);
 
 // ---------------------------------------------------------------------------
-// VUE D'ENSEMBLE — les 6 compétences du référentiel (parcours A).
+// VUE D'ENSEMBLE — les six compétences du diplôme.
 // niveauNum : 2 = niveau atteint en fin de 2ᵉ année, 3 = niveau atteint en 3ᵉ.
-// En parcours A, C1/C2/C6 sont poussées au niveau 3 (« cœur d'expertise »).
+// Trois d'entre elles atteignent le niveau 3 : c'est le cœur de ma spécialisation.
 // ---------------------------------------------------------------------------
 export const toutesLesCompetences = [
   {
-    code: "C1",
     titre: "Réaliser un développement d'application",
-    plain: "Niveau 3 — adapter des applications sur un ensemble de supports.",
+    plain: "Adapter des applications sur un ensemble de supports.",
     niveau: "Confirmé",
     niveauNum: 3,
     color: "#6fa7d4",
     focus: true,
+    id: "c1",
     slug: "developper-une-application",
   },
   {
-    code: "C2",
     titre: "Optimiser des applications",
-    plain: "Niveau 3 — analyser et optimiser des applications.",
+    plain: "Analyser et optimiser des applications.",
     niveau: "Confirmé",
     niveauNum: 3,
     color: "#d2a24c",
     focus: true,
+    id: "c2",
     slug: "optimiser-des-applications",
   },
   {
-    code: "C3",
     titre: "Administrer des systèmes communicants",
-    plain: "Niveau 2 — déployer des services dans une architecture réseau.",
+    plain: "Déployer des services dans une architecture réseau.",
     niveau: "Intermédiaire",
     niveauNum: 2,
     color: "#9a9280",
   },
   {
-    code: "C4",
     titre: "Gérer des données de l'information",
-    plain:
-      "Niveau 2 — optimiser une base, interagir avec une application et mettre en œuvre la sécurité.",
+    plain: "Optimiser une base, interagir avec une application et mettre en œuvre la sécurité.",
     niveau: "Intermédiaire",
     niveauNum: 2,
     color: "#9a9280",
   },
   {
-    code: "C5",
     titre: "Conduire un projet",
-    plain:
-      "Niveau 2 — appliquer une démarche de suivi de projet selon les besoins métiers.",
+    plain: "Appliquer une démarche de suivi de projet selon les besoins métiers.",
     niveau: "Intermédiaire",
     niveauNum: 2,
     color: "#9a9280",
   },
   {
-    code: "C6",
     titre: "Collaborer dans une équipe",
-    plain: "Niveau 3 — manager une équipe informatique.",
+    plain: "Manager une équipe informatique.",
     niveau: "Confirmé",
     niveauNum: 3,
     color: "#63b189",
     focus: true,
+    id: "c6",
     slug: "collaborer-manager",
   },
 ];
 
 // ---------------------------------------------------------------------------
 // Les compétences de niveau 2 — atteintes en 2ᵉ année, réinvesties cette année.
-// Affichées en complément pour couvrir l'ensemble du référentiel.
+// Affichées en complément, pour présenter l'ensemble du diplôme.
 // ---------------------------------------------------------------------------
 export const competencesNiveau2 = [
   {
-    code: "C3",
     titre: "Administrer des systèmes informatiques communicants complexes",
     niveauTitre: "Déployer des services dans une architecture réseau",
     reinvesti:
@@ -360,7 +342,6 @@ export const competencesNiveau2 = [
     ],
   },
   {
-    code: "C4",
     titre: "Gérer des données de l'information",
     niveauTitre:
       "Optimiser une base de données, interagir avec une application et mettre en œuvre la sécurité",
@@ -374,7 +355,6 @@ export const competencesNiveau2 = [
     ],
   },
   {
-    code: "C5",
     titre: "Conduire un projet",
     niveauTitre:
       "Appliquer une démarche de suivi de projet en fonction des besoins métiers des clients et des utilisateurs",
