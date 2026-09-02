@@ -92,9 +92,9 @@ export const competences = [
     bilan:
       "Je suis passé d'une application web mono-support livrée sur mon poste à une architecture mobile + web + serveur que j'ai conçue seul, mise en production et maintenue face à de vrais utilisateurs. Le saut du niveau 2 au niveau 3 tient dans cette phrase : je ne choisis plus une architecture parce qu'elle est correcte, mais parce qu'elle rend possible ce qui devra changer.",
     pistes: [
-      "Mettre en place la file locale hors-ligne de l'application mobile (usage en salon, réseau saturé).",
-      "Basculer les modèles d'IA vers l'infrastructure du client pour tenir pleinement la promesse de souveraineté.",
-      "Renforcer la couverture de tests d'intégration bout en bout avant chaque mise en production.",
+      "Approfondir la conception d'architectures logicielles.",
+      "Renforcer la qualité et les tests avant mise en production.",
+      "Élargir ma pratique du développement multi-supports.",
     ],
   },
 
@@ -177,9 +177,9 @@ export const competences = [
     bilan:
       "Je suis passé de la mesure d'algorithmes sur des jeux de test, en formation, à l'optimisation de systèmes qui tournent devant de vrais utilisateurs. Ce qui a changé n'est pas la technique mais la discipline : je formule le critère avant de choisir, je mesure au lieu de supposer, et j'accepte qu'une méthode élégante soit écartée par un essai qui la contredit.",
     pistes: [
-      "Évaluer finement le prototype à modèle audio unique de l'agent vocal, qui supprime deux étapes du pipeline.",
-      "Systématiser le profilage avant optimisation plutôt que raisonner sur le code lu.",
-      "Mesurer l'empreinte des traitements d'IA pour objectiver leur coût environnemental.",
+      "Approfondir les méthodes de mesure de performance.",
+      "Élargir ma connaissance des structures de données et des algorithmes.",
+      "Intégrer le coût des ressources aux critères de choix.",
     ],
   },
 
@@ -222,7 +222,7 @@ export const competences = [
     // Cadrage assumé : je porte mes projets seul, je démontre donc ce que le
     // niveau 3 vise réellement — veille, innovation, changement, management.
     cadrage:
-      "Chez Cloud Inspire je porte mes projets seul : je ne peux pas démontrer cette compétence par l'encadrement d'une équipe, et je ne le prétends pas. Je la démontre par ce que le niveau 3 vise réellement — organiser une veille et la partager, comprendre les enjeux économiques du numérique, accompagner un changement dans une organisation, soutenir la conduite d'un projet — en m'appuyant aussi sur mon alternance de 2ᵉ année en équipe constituée.",
+      "Chez Cloud Inspire, je porte mes projets en autonomie, au contact direct du client. Je démontre donc cette compétence par ce que le niveau 3 vise précisément — organiser une veille et la partager, comprendre les enjeux économiques du numérique, accompagner un changement dans une organisation, soutenir la conduite d'un projet — en m'appuyant également sur mon alternance de 2ᵉ année, menée au sein d'une équipe constituée.",
     traces: [
       {
         titre: "Une veille technique organisée et réinvestie dans les produits",
@@ -265,11 +265,11 @@ export const competences = [
       },
     ],
     bilan:
-      "Je suis passé du travail de groupe scolaire à une posture où le code n'est qu'une partie du travail : il faut qu'une évolution soit adoptée, qu'une décision soit comprise, qu'un cadre juridique soit respecté. Mon autonomie chez Cloud Inspire est réelle, et c'est aussi ma limite sur cette compétence — je l'assume et j'en fais une piste.",
+      "Je suis passé du travail de groupe scolaire à une posture où le code n'est qu'une partie du travail : il faut qu'une évolution soit adoptée, qu'une décision soit comprise, qu'un cadre juridique soit respecté. L'autonomie complète dont je dispose chez Cloud Inspire m'a placé au contact direct du client et des enjeux de l'entreprise.",
     pistes: [
-      "Formaliser ma veille en synthèses régulières partagées, plutôt qu'en documentation passive.",
-      "Prendre un rôle de coordination affirmé sur un projet mené à plusieurs.",
-      "Structurer l'accompagnement des utilisateurs (formation, support) au-delà de la documentation technique.",
+      "Développer ma pratique du travail en équipe.",
+      "Approfondir la conduite de projet et la relation client.",
+      "Renforcer le partage de connaissances et la documentation.",
     ],
   },
 ];
