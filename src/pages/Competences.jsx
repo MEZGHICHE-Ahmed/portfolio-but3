@@ -7,7 +7,7 @@ const COULEUR = { c1: 'var(--color-c1)', c2: 'var(--color-c2)', c6: 'var(--color
 /** Jauge de niveau : trois segments, remplis jusqu'au niveau atteint. */
 function Jauge({ niveau, accent }) {
   return (
-    <div className="flex gap-1" title={`Niveau ${niveau} sur 3`}>
+    <div className="flex gap-1" aria-hidden>
       {[1, 2, 3].map((n) => (
         <span
           key={n}
@@ -53,7 +53,7 @@ export default function Competences() {
               >
                 <div className="flex items-center justify-between gap-3">
                   <span className="code font-semibold" style={{ color: COULEUR[c.id] }}>
-                    Niveau {c.niveauNum} sur 3
+                    {c.niveau}
                   </span>
                   <Jauge niveau={c.niveauNum} accent={COULEUR[c.id]} />
                 </div>
@@ -101,7 +101,7 @@ export default function Competences() {
               <>
                 <div className="flex items-center justify-between gap-3">
                   <span className="code font-semibold" style={{ color: teinte }}>
-                    Niveau {c.niveauNum} sur 3
+                    {c.niveau}
                   </span>
                   <Jauge niveau={c.niveauNum} accent={teinte} />
                 </div>

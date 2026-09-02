@@ -26,7 +26,7 @@ export default function CompetenceDetail() {
     <article className="sheet pb-8">
       <PageHead
         ariane={[['Accueil', '/'], ['Compétences', '/competences'], [c.titre, null]]}
-        kicker={`Niveau ${c.niveauNum} sur 3 · ${c.niveau}`}
+        kicker={c.niveau}
         title={c.titre}
         lead={c.tagline}
         accent={accent}
@@ -34,7 +34,7 @@ export default function CompetenceDetail() {
           ['Intitulé officiel', c.titreOfficiel],
           ['Savoir-faire visés', String(c.apprentissages.length)],
           ['Projets associés', String(c.traces.length)],
-          ['Niveau atteint', `${c.niveauNum} · ${c.niveau}`],
+          ['Niveau atteint', c.niveau],
         ]}
       />
 
@@ -218,7 +218,7 @@ export default function CompetenceDetail() {
             <div className="mt-8 grid gap-5 sm:grid-cols-3">
               <Renvoi
                 to={`/competences/${next.slug}`}
-                code={`Niveau ${next.niveauNum} sur 3`}
+                code={next.niveau}
                 titre={next.titre}
                 texte={next.tagline}
                 action="Voir la compétence"

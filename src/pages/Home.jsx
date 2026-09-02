@@ -228,7 +228,7 @@ export default function Home() {
                 style={{ borderTop: `3px solid ${COULEUR[c.id]}` }}
               >
                 <p className="code font-semibold" style={{ color: COULEUR[c.id] }}>
-                  Niveau {c.niveauNum} sur 3
+                  {c.niveau}
                 </p>
                 <h3 className="mt-3 text-[1.2rem] font-bold leading-snug">{c.titre}</h3>
                 <p className="mt-3 flex-1 text-[0.95rem] leading-relaxed text-fg-2">{c.tagline}</p>
